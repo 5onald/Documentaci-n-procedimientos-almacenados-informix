@@ -699,18 +699,60 @@
                             <ul class="business-rules">
                                 <li>
                                     <strong>RN-001:</strong>
-                                    [DESCRIBIR UNA REGLA CONFIRMADA
-                                    EN EL CÓDIGO O EN LA ESPECIFICACIÓN.]
+                                    Las cuotas iniciales se seleccionan de sdocs con ano_mesd igual a cero y cuota mayor que cero
                                 </li>
 
                                 <li>
                                     <strong>RN-002:</strong>
-                                    [EXPLICAR UNA RESTRICCIÓN O CONDICIÓN.]
+                                    Cuando no se encuentra una formalización SOL, se busca una formalización CAS
                                 </li>
 
                                 <li>
                                     <strong>RN-003:</strong>
-                                    [INDICAR LAS EXCEPCIONES A LA REGLA.]
+                                    Cuando no se obtiene la fecha del último pago, se 
+                                    utiliza la fecha de formalización como referencia
+                                </li>
+
+                                <li>
+                                    <strong>RN-004:</strong>
+                                    El cálculo de abonos excluye movimientos con 
+                                    descripciones que coinciden con el patrón %INT%COR%
+                                </li>
+
+                                <li>
+                                    <strong>RN-005:</strong>
+                                    Si el abono disponible cubre el saldo de la cuota, el saldo se establece 
+                                    en cero y el importe del saldo se resta del abono disponible
+                                </li>
+
+                                <li>
+                                    <strong>RN-006:</strong>
+                                    El interés calculado no puede superar el valor de la cuota según la validación implementada
+                                </li>
+
+                                <li>
+                                    <strong>RN-007:</strong>
+                                    El capital calculado no puede ser negativo. Si supera el 
+                                    saldo restante del documento, se limita a dicho saldo
+                                </li>
+
+                                <li>
+                                    <strong>RN-008:</strong>
+                                    Se generan cuotas adicionales con saldo cero cuando la última fecha de 
+                                    vencimiento es anterior a pFechaCalculo y la fecha generada sigue siendo 
+                                    estrictamente menor que la fecha de cálculo.
+                                </li>
+
+                                <li>
+                                    <strong>RN-009:</strong>
+                                    El interés moratorio se actualiza únicamente para cuotas 
+                                    con saldo positivo y días de mora mayores que cero.
+                                </li>
+
+                                <li>
+                                    <strong>RN-010:</strong>
+                                    La tasa de mora se obtiene primero mediante fn_informa_trae_tasa_mora. 
+                                    Si resulta cero, se consulta la tasa_iva de concaja.
                                 </li>
                             </ul>
                         </section>
@@ -730,10 +772,10 @@
                                     </thead>
 
                                     <tbody>
-                                        <tr>
-                                            <td><code>[VARIABLE_1]</code></td>
-                                            <td>[TIPO_DATO]</td>
-                                            <td>[USO EN EL PROCESO]</td>
+                                         <tr>
+                                            <td><code>vFechaUltimaFormalizacion</code></td>
+                                            <td>DATE</td>
+                                            <td>Almacena la fecha de formalización seleccionada.</td>
                                         </tr>
                                     </tbody>
                                 </table>
