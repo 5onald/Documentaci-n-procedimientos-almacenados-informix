@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Documentación técnica de procesos, procedimientos almacenados, APIs y flujos de negocio.">
+    <title>Documentación técnica | DocuFlow</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+    <header class="hero">
+        <div class="container">
+            <div class="hero-top">
+                <span class="eyebrow">DOCUMENTACIÓN TÉCNICA</span>
+                <div class="hero-badges">
+                    <span class="badge badge-version">Versión [1.0]</span>
+                    <span class="badge badge-date">[DD/MM/AAAA]</span>
+                </div>
+            </div>
+
+            <h1>DocuFlow</h1>
+            <p class="hero-description">Documentación técnica de procesos | Informix / SQL / APIs / ETL</p>
+
+            <div class="hero-meta">
+                <div>
+                    <span class="meta-label">Responsable</span>
+                    <strong>Alejandro De Jesús Solano Ruiz</strong>
+                </div>
+                <div>
+                    <span class="meta-label">Entorno</span>
+                    <strong>[DESARROLLO / QA / PRODUCCIÓN]</strong>
+                </div>
+                <div>
+                    <span class="meta-label">Estado</span>
+                    <strong class="status status-active">Documentación en revisión</strong>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container page-layout">
+
+        <!-- Navegación lateral -->
+        <aside class="sidebar" aria-label="Navegación del documento">
+            <p class="sidebar-title">CONTENIDO</p>
+
+            <nav>
+                <a href="#descripcion">01. Descripción general</a>
+                <a href="#catalogo">02. Catálogo de procesos</a>
+                <a href="#procesos">03. Detalle técnico</a>
+                <a href="#diccionario">04. Diccionario de datos</a>
+                <a href="#glosario">05. Glosario</a>
+                <a href="#control-cambios">06. Control de cambios</a>
+            </nav>
+
+            <div class="sidebar-note">
+                <strong>Nota</strong>
+                <p>Actualiza los campos entre corchetes y verifica cada sección con el código fuente real.</p>
+            </div>
+        </aside>
+
+        <main id="contenido" class="main-content">
+
+            <!-- 01. Descripción general -->
+            <section id="descripcion" class="section">
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <div>
+                        <h2>Descripción general</h2>
+                        <p>Contexto, alcance y arquitectura del sistema.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Propósito</h3>
+                    <p>[DESCRIBIR EL OBJETIVO DEL SISTEMA, EL PROBLEMA QUE RESUELVE Y SU FUNCIÓN DENTRO DEL NEGOCIO.]</p>
+
+                    <h3>Alcance</h3>
+                    <p>[INDICAR LOS PROCESOS INCLUIDOS, LOS MÓDULOS RELACIONADOS Y LAS LIMITACIONES CONOCIDAS.]</p>
+
+                    <h3>Tecnologías utilizadas</h3>
+                    <div class="tag-list">
+                        <span class="tag">[BASE DE DATOS]</span>
+                        <span class="tag">[LENGUAJE]</span>
+                        <span class="tag">[PLATAFORMA]</span>
+                        <span class="tag">[HERRAMIENTAS]</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02. Catálogo de procesos -->
+            <section id="catalogo" class="section">
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <div>
+                        <h2>Catálogo de procesos</h2>
+                        <p>Inventario de los componentes documentados.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre del proceso</th>
+                                    <th>Tipo</th>
+                                    <th>Descripción funcional</th>
+                                    <th>Entrada principal</th>
+                                    <th>Salida principal</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <!-- TODO: Agregar una fila por proceso -->
+                                <tr>
+                                    <td>PR-001</td>
+                                    <td><a href="#proceso-001">Cálculo de pagos, saldos y cobros</a></td>
+                                    <td><span class="badge badge-purple">[TIPO]</span></td>
+                                    <td>[DESCRIPCIÓN_FUNCIONAL]</td>
+                                    <td>[ENTRADA]</td>
+                                    <td>[SALIDA]</td>
+                                </tr>
+                                <tr>
+                                    <td>PR-002</td>
+                                    <td><a href="#proceso-001">cálculo de pagos, saldos y cobros</a></td>
+                                    <td><span class="badge badge-green">[TIPO]</span></td>
+                                    <td>[DESCRIPCIÓN_FUNCIONAL]</td>
+                                    <td>[ENTRADA]</td>
+                                    <td>[SALIDA]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="table-caption">
+                        Total de procesos documentados: [N]
+                    </p>
+                </div>
+            </section>
+
+            <!-- 03. Detalle de procesos -->
+            <section id="procesos" class="section">
+                <div class="section-heading">
+                    <span class="section-number">03</span>
+                    <div>
+                        <h2>Detalle técnico de procesos</h2>
+                        <p>
+                            Especificaciones, comportamiento y dependencias.
+                        </p>
+                    </div>
+                </div>
+
+                <!--
+                    TODO: Duplicar esta tarjeta por cada proceso.
+                    Actualizar los identificadores para evitar duplicados.
+                    No asumir comportamiento que no esté confirmado
+                    en el código fuente.
+                -->
+                <article id="proceso-001" class="process-card">
+
+                    <header class="process-header">
+                        <div>
+                            <div class="process-kicker">
+                                PROCESO PR-001
+                            </div>
+
+                            <h3>[NOMBRE_PROCESO]</h3>
+
+                            <p>
+                                [DESCRIPCIÓN BREVE DEL OBJETIVO
+                                Y COMPORTAMIENTO DEL PROCESO.]
+                            </p>
+                        </div>
+
+                        <span class="badge badge-green">[VERSIÓN]</span>
+                    </header>
+
+                    <div class="process-body">
+
+                        <!-- Identificación -->
+                        <section class="subsection">
+                            <h4>3.1. Identificación del proceso</h4>
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span>Tipo</span>
+                                    <strong>[PROCEDIMIENTO / API / ETL]</strong>
+                                </div>
+
+                                <div class="info-item">
+                                    <span>Plataforma</span>
+                                    <strong>[INFORMIX / OTRA]</strong>
+                                </div>
+
+                                <div class="info-item">
+                                    <span>Frecuencia</span>
+                                    <strong>[FRECUENCIA DE EJECUCIÓN]</strong>
+                                </div>
+
+                                <div class="info-item">
+                                    <span>Transaccionalidad</span>
+                                    <strong>[CONFIRMAR EN EL CÓDIGO]</strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Parámetros -->
+                        <section class="subsection">
+                            <h4>3.2. Parámetros de entrada</h4>
+
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Tipo de dato</th>
+                                            <th>Descripción</th>
+                                            <th>Obligatorio</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><code>[PARAMETRO_1]</code></td>
+                                            <td>[TIPO_DATO]</td>
+                                            <td>[DESCRIPCIÓN]</td>
+                                            <td>[SÍ / NO]</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td><code>[PARAMETRO_2]</code></td>
+                                            <td>[TIPO_DATO]</td>
+                                            <td>[DESCRIPCIÓN]</td>
+                                            <td>[SÍ / NO]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p class="helper-text">
+                                Si el proceso no recibe parámetros,
+                                indicar expresamente que no aplica.
+                            </p>
+                        </section>
+
+                        <!-- Salidas -->
+                        <section class="subsection">
+                            <h4>3.3. Valores de retorno y salidas</h4>
+
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Salida</th>
+                                            <th>Tipo</th>
+                                            <th>Descripción</th>
+                                            <th>Condición</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>[SALIDA_1]</td>
+                                            <td>[TIPO]</td>
+                                            <td>[DESCRIPCIÓN]</td>
+                                            <td>[CONDICIÓN]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <p>
+                                <strong>Resultado esperado:</strong>
+                                [DESCRIBIR EL RESULTADO CORRECTO Y LOS
+                                POSIBLES ESTADOS DE FINALIZACIÓN.]
+                            </p>
+                        </section>
+
+                        <!-- Diagrama -->
+                        <section class="subsection">
+                            <h4>3.4. Diagrama de flujo</h4>
+
+                            <p class="helper-text">
+                                Representación lógica del proceso.
+                                Sustituir el ejemplo por el flujo real.
+                            </p>
+
+                            <pre class="flow-diagram"><code>
+┌────────────────────────────────────┐
+│              INICIO                │
+└─────────────────┬──────────────────┘
+                  ▼
+┌────────────────────────────────────┐
+│ 1. Recibir parámetros de entrada   │
+└─────────────────┬──────────────────┘
+                  ▼
+┌────────────────────────────────────┐
+│ 2. Validar condiciones iniciales   │
+└─────────────────┬──────────────────┘
+                  ▼
+          ┌───────────────┐
+          │ ¿Es válido?   │
+          └───────┬───────┘
+             SÍ   │   NO
+          ┌───────┘   └────────┐
+          ▼                    ▼
+┌──────────────────┐  ┌──────────────────┐
+│ Ejecutar proceso │  │ Registrar error  │
+└────────┬─────────┘  └────────┬─────────┘
+         │                     │
+         ▼                     ▼
+┌──────────────────┐  ┌──────────────────┐
+│ Generar salida   │  │ Salida de error  │
+└────────┬─────────┘  └────────┬─────────┘
+         └──────────┬──────────┘
+                    ▼
+         ┌─────────────────────┐
+         │         FIN         │
+         └─────────────────────┘
+                            </code></pre>
+
+                            <div class="callout callout-warning">
+                                <strong>Importante</strong>
+                                <p>
+                                    Este diagrama es ilustrativo.
+                                    No representa necesariamente la lógica
+                                    real del procedimiento documentado.
+                                    Confirmar las condiciones, los bucles,
+                                    las excepciones y las salidas contra
+                                    el código fuente.
+                                </p>
+                            </div>
+                        </section>
+
+                        <!-- Paso a paso -->
+                        <section class="subsection">
+                            <h4>3.5. Desglose paso a paso</h4>
+
+                            <ol class="step-list">
+                                <li>
+                                    <h5>Recepción de parámetros</h5>
+                                    <p>
+                                        <strong>Propósito:</strong>
+                                        [EXPLICAR QUÉ INFORMACIÓN RECIBE
+                                        EL PROCESO Y PARA QUÉ SE UTILIZA.]
+                                    </p>
+                                    <p>
+                                        <strong>Variables:</strong>
+                                        [VARIABLES RELACIONADAS.]
+                                    </p>
+                                    <p>
+                                        <strong>Efectos:</strong>
+                                        [EFECTOS OBSERVABLES, SI EXISTEN.]
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Validación inicial</h5>
+                                    <p>
+                                        <strong>Propósito:</strong>
+                                        [DESCRIBIR LAS VALIDACIONES
+                                        DE PARÁMETROS Y PRECONDICIONES.]
+                                    </p>
+                                    <p>
+                                        <strong>Condición:</strong>
+                                        [INDICAR LA EXPRESIÓN EVALUADA.]
+                                    </p>
+                                    <p>
+                                        <strong>Resultado:</strong>
+                                        [EXPLICAR QUÉ SUCEDE SI SE CUMPLE
+                                        O NO LA CONDICIÓN.]
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Consulta o lectura de datos</h5>
+                                    <p>
+                                        <strong>Propósito:</strong>
+                                        [IDENTIFICAR LAS CONSULTAS,
+                                        LAS TABLAS Y LOS FILTROS UTILIZADOS.]
+                                    </p>
+                                    <p>
+                                        <strong>Resultado:</strong>
+                                        [DESCRIBIR LOS DATOS RECUPERADOS
+                                        Y EL TRATAMIENTO DE RESULTADOS VACÍOS.]
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Aplicación de reglas de negocio</h5>
+                                    <p>
+                                        <strong>Propósito:</strong>
+                                        [EXPLICAR LOS CÁLCULOS, LAS
+                                        CONDICIONES Y LAS DECISIONES.]
+                                    </p>
+                                    <p>
+                                        <strong>Ramas:</strong>
+                                        [DOCUMENTAR CADA CAMINO IF / ELSE
+                                        Y SUS CONSECUENCIAS.]
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Procesamiento de registros</h5>
+                                    <p>
+                                        <strong>Propósito:</strong>
+                                        [DESCRIBIR LAS OPERACIONES SOBRE
+                                        LOS REGISTROS O ELEMENTOS.]
+                                    </p>
+                                    <p>
+                                        <strong>Iteración:</strong>
+                                        [INDICAR EL INICIO, LA CONDICIÓN
+                                        DE CONTINUACIÓN Y LA SALIDA
+                                        DE CADA BUCLE, SI EXISTE.]
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Persistencia de datos</h5>
+                                    <p>
+                                        <strong>Propósito:</strong>
+                                        [EXPLICAR LAS INSERCIONES,
+                                        ACTUALIZACIONES O ELIMINACIONES,
+                                        SI EXISTEN.]
+                                    </p>
+                                    <p>
+                                        <strong>Transacción:</strong>
+                                        [DOCUMENTAR COMMIT, ROLLBACK
+                                        Y MANEJO TRANSACCIONAL SOLO
+                                        CUANDO ESTÉN CONFIRMADOS.]
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Gestión de excepciones</h5>
+                                    <p>
+                                        <strong>Propósito:</strong>
+                                        [IDENTIFICAR LOS ERRORES
+                                        CONTEMPLADOS Y CÓMO SE PROCESAN.]
+                                    </p>
+                                    <p>
+                                        <strong>Resultado:</strong>
+                                        [INDICAR SI SE REGISTRA EL ERROR,
+                                        SE PROPAGA O SE FINALIZA EL PROCESO.]
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Generación de la salida</h5>
+                                    <p>
+                                        <strong>Propósito:</strong>
+                                        [EXPLICAR CÓMO SE DEVUELVEN
+                                        LOS DATOS O EL ESTADO FINAL.]
+                                    </p>
+                                    <p>
+                                        <strong>Resultado:</strong>
+                                        [DOCUMENTAR LOS RESULTADOS
+                                        POSIBLES Y LAS CONDICIONES DE FIN.]
+                                    </p>
+                                </li>
+                            </ol>
+
+                            <p class="helper-text">
+                                Agregar o eliminar pasos según la lógica
+                                real. Documentar entre 5 y 10 pasos
+                                o los necesarios para explicar el proceso
+                                de manera completa.
+                            </p>
+                        </section>
+
+                        <!-- Reglas de negocio -->
+                        <section class="subsection">
+                            <h4>3.6. Reglas de negocio</h4>
+
+                            <ul class="business-rules">
+                                <li>
+                                    <strong>RN-001:</strong>
+                                    [DESCRIBIR UNA REGLA CONFIRMADA
+                                    EN EL CÓDIGO O EN LA ESPECIFICACIÓN.]
+                                </li>
+
+                                <li>
+                                    <strong>RN-002:</strong>
+                                    [EXPLICAR UNA RESTRICCIÓN O CONDICIÓN.]
+                                </li>
+
+                                <li>
+                                    <strong>RN-003:</strong>
+                                    [INDICAR LAS EXCEPCIONES A LA REGLA.]
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Variables internas -->
+                        <section class="subsection">
+                            <h4>3.7. Variables internas</h4>
+
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Variable</th>
+                                            <th>Tipo</th>
+                                            <th>Propósito</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td><code>[VARIABLE_1]</code></td>
+                                            <td>[TIPO_DATO]</td>
+                                            <td>[USO EN EL PROCESO]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- Dependencias -->
+                        <section class="subsection">
+                            <h4>3.8. Dependencias</h4>
+
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Dependencia</th>
+                                            <th>Tipo</th>
+                                            <th>Uso</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <td>[NOMBRE_TABLA]</td>
+                                            <td>Tabla</td>
+                                            <td>[LECTURA / ESCRITURA]</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>[NOMBRE_FUNCION]</td>
+                                            <td>Función / procedimiento</td>
+                                            <td>[PROPÓSITO]</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>[SERVICIO_EXTERNO]</td>
+                                            <td>Servicio</td>
+                                            <td>[SI APLICA]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- Ejemplo -->
+                        <section class="subsection">
+                            <h4>3.9. Ejemplo de ejecución</h4>
+
+                            <h5>Entrada de ejemplo</h5>
+
+                            <pre class="code-block"><code>
+-- TODO: Sustituir por una llamada válida
+-- para la tecnología utilizada.
+[LLAMADA_DE_EJEMPLO]
+                            </code></pre>
+
+                            <h5>Salida esperada</h5>
+
+                            <pre class="code-block"><code>
+[RESULTADO_ESPERADO]
+                            </code></pre>
+
+                            <p class="helper-text">
+                                Utilizar valores representativos y no incluir
+                                credenciales, datos personales sensibles
+                                ni información confidencial.
+                            </p>
+                        </section>
+
+                        <!-- Notas y advertencias -->
+                        <section class="subsection">
+                            <h4>3.10. Notas y limitaciones</h4>
+
+                            <div class="callout callout-note">
+                                <strong>Nota técnica</strong>
+                                <p>
+                                    [OBSERVACIONES, SUPUESTOS O INFORMACIÓN
+                                    ADICIONAL RELEVANTE.]
+                                </p>
+                            </div>
+
+                            <div class="callout callout-warning">
+                                <strong>Advertencias</strong>
+                                <p>
+                                    [RIESGOS, LIMITACIONES O CONDICIONES
+                                    QUE DEBEN VERIFICARSE.]
+                                </p>
+                            </div>
+
+                            <div class="callout callout-success">
+                                <strong>Validación</strong>
+                                <p>
+                                    [PRUEBAS REALIZADAS, RESULTADOS
+                                    VERIFICADOS O VALIDACIONES PENDIENTES.]
+                                </p>
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+
+                <!-- TODO: Duplicar article.process-card para PR-002, PR-003, etc. -->
+            </section>
+
+            <!-- 04. Diccionario de datos -->
+            <section id="diccionario" class="section">
+                <div class="section-heading">
+                    <span class="section-number">04</span>
+                    <div>
+                        <h2>Diccionario de datos</h2>
+                        <p>
+                            Parámetros globales y configuraciones.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Parámetros globales</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Tipo</th>
+                                    <th>Valor / origen</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>[PARAMETRO_GLOBAL]</td>
+                                    <td>[TIPO]</td>
+                                    <td>[VALOR U ORIGEN]</td>
+                                    <td>[DESCRIPCIÓN]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Constantes y configuraciones</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Identificador</th>
+                                    <th>Valor</th>
+                                    <th>Uso</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>[CONSTANTE]</td>
+                                    <td>[VALOR]</td>
+                                    <td>[PROPÓSITO]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 05. Glosario -->
+            <section id="glosario" class="section">
+                <div class="section-heading">
+                    <span class="section-number">05</span>
+                    <div>
+                        <h2>Glosario técnico</h2>
+                        <p>
+                            Terminología utilizada en la documentación.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <dl class="glossary">
+                        <div>
+                            <dt>Procedimiento almacenado</dt>
+                            <dd>
+                                Rutina almacenada en la base de datos
+                                que ejecuta instrucciones definidas.
+                            </dd>
+                        </div>
+
+                        <div>
+                            <dt>Parámetro</dt>
+                            <dd>
+                                Dato recibido, devuelto o utilizado
+                                por un componente.
+                            </dd>
+                        </div>
+
+                        <div>
+                            <dt>Dependencia</dt>
+                            <dd>
+                                Recurso, objeto o componente necesario
+                                para ejecutar un proceso.
+                            </dd>
+                        </div>
+
+                        <div>
+                            <dt>[TÉRMINO_ADICIONAL]</dt>
+                            <dd>[DEFINICIÓN]</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <!-- 06. Control de cambios -->
+            <section id="control-cambios" class="section">
+                <div class="section-heading">
+                    <span class="section-number">06</span>
+                    <div>
+                        <h2>Control de cambios</h2>
+                        <p>
+                            Historial de modificaciones del documento.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Versión</th>
+                                    <th>Fecha</th>
+                                    <th>Responsable</th>
+                                    <th>Descripción del cambio</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>1.0</td>
+                                    <td>[DD/MM/AAAA]</td>
+                                    <td>[RESPONSABLE]</td>
+                                    <td>Creación inicial del documento.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="document-footer">
+                <p>
+                    <strong>[NOMBRE DEL SISTEMA]</strong>
+                    · Documentación técnica
+                </p>
+
+                <p>
+                    Versión [1.0] · Generado el [DD/MM/AAAA]
+                </p>
+
+                <p class="footer-note">
+                    Documento sujeto a validación por el equipo técnico.
+                </p>
+            </footer>
+
+        </main>
+    </div>
+</body>
+</html>
