@@ -498,8 +498,9 @@
 
                             <div class="callout callout-warning">
                                 <strong>Importante</strong>
-                                <p>El diagrama resume el flujo del código fuente. La consulta de formalización CAS presenta una posible 
-                                inconsistencia en la asignación del identificador de movimiento. Debe verificarse antes de considerar el flujo validado.</p>
+                                <p>El diagrama resume el flujo del código fuente. La consulta de formalización 
+                                    CAS presenta una posible inconsistencia en la asignación del identificador 
+                                    de movimiento. Debe verificarse antes de considerar el flujo validado.</p>
                             </div>
                         </section>
 
@@ -568,11 +569,13 @@
                                         Recuperar los valores de referencia para el cálculo dinámico de las cuotas
                                     </p>
                                     <p><strong>Variables:</strong>
-                                        vsaldo_doc, vretencion, vmsaldo_inicial_prestamo, vmcuota, vsaldo_doc_restante y vtasa_int
+                                        vsaldo_doc, vretencion, vmsaldo_inicial_prestamo, vmcuota, 
+                                        vsaldo_doc_restante y vtasa_int
                                     </p>
                                     <p><strong>Operaciones:</strong>
-                                        se consulta docs para obtener el saldo del documento, la retención y el valor 
-                                        inicial. También se consulta sdocs para obtener el saldo de la cuota número dos
+                                        se consulta docs para obtener el saldo del documento, la retención y 
+                                        el valor inicial. También se consulta sdocs para obtener el saldo de 
+                                        la cuota número dos
                                     </p>
                                     <p><strong>Cálculo:</strong>
                                         vsaldo_doc_restante se inicializa con la suma del saldo del documento 
@@ -586,13 +589,15 @@
                                 <li>
                                     <h5>Identificación de la última formalización</h5>
                                     <p><strong>Propósito:</strong>
-                                        Establecer la referencia temporal y el identificador de movimiento a partir de los comprobantes de formalización
+                                        Establecer la referencia temporal y el identificador de movimiento 
+                                        a partir de los comprobantes de formalización
                                     </p>
                                     <p><strong>Variables:</strong>
                                         vFechaUltimaFormalizacion y vIdUltimaFormalizacion
                                     </p>
                                     <p><strong>Condición:</strong>
-                                        Primero se busca la fecha máxima y el ID máximo de movimientos positivos asociados a comprobantes de tipo SOL
+                                        Primero se busca la fecha máxima y el ID máximo de movimientos 
+                                        positivos asociados a comprobantes de tipo SOL
                                     </p>
                                     <p><strong>Rama alternativa:</strong>
                                         Si la fecha obtenida es NULL, se consulta la formalización CAS
@@ -606,7 +611,8 @@
                                 <li>
                                     <h5>Cálculo del último pago y los abonos</h5>
                                     <p><strong>Propósito:</strong>
-                                        Identificar el último pago registrado y determinar el importe disponible para aplicarlo a las cuotas
+                                        Identificar el último pago registrado y determinar el importe disponible 
+                                        para aplicarlo a las cuotas
                                     </p>
                                     <p><strong>Variables:</strong>
                                         vFechaUltimoPago, vFechaUltimaFormalizacion, vIdUltimaFormalizacion y vAbono
@@ -616,8 +622,9 @@
                                         RC o SOL. Si no existe, se utiliza la fecha de formalización
                                     </p>
                                     <p><strong>Reglas:</strong>
-                                        Se excluyen los comprobantes SOL y CAS del cálculo de abonos. Los movimientos cuya descripción 
-                                        coincide con %INT%COR% reciben un factor de cero. El signo del importe depende de deb_cre
+                                        Se excluyen los comprobantes SOL y CAS del cálculo de abonos. Los 
+                                        movimientos cuya descripción coincide con %INT%COR% reciben un factor 
+                                        de cero. El signo del importe depende de deb_cre
                                     </p>
                                     <p><strong>Resultado:</strong>
                                         Si la suma calculada es NULL, vAbono se establece en cero
@@ -625,40 +632,64 @@
                                 </li>
 
                                 <li>
-                                    <h5></h5>
-                                    <p>
-                                        <strong>Propósito:</strong>
-                                        [IDENTIFICAR LOS ERRORES
-                                        CONTEMPLADOS Y CÓMO SE PROCESAN.]
+                                    <h5>Obtención de la configuración de mora</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Identificar si existe una tabla de pagos modificada 
+                                        y obtener los parámetros utilizados para calcular la mora
                                     </p>
-                                    <p>
-                                        <strong>Resultado:</strong>
-                                        [INDICAR SI SE REGISTRA EL ERROR,
-                                        SE PROPAGA O SE FINALIZA EL PROCESO.]
+                                    <p><strong>Variables:</strong>
+                                        vse_modifico_tp, v_iva_mora y vcobro_mora
+                                    </p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se consulta tpagos para el crédito. Después se 
+                                        obtiene la tasa mediante fn_informa_trae_tasa_mora
+                                    </p>
+                                    <p><strong>Condición:</strong>
+                                        Si la tasa obtenida es NULL, se convierte en cero. Si 
+                                        es cero, se consulta concaja para recuperar tasa_iva
+                                    </p>
+                                    <p><strong>Resultado:</strong>
+                                        inf_parametro proporciona inf_calculo_mora, que 
+                                        interviene en la fórmula de interés moratorio
                                     </p>
                                 </li>
 
                                 <li>
-                                    <h5></h5>
-                                    <p>
-                                        <strong>Propósito:</strong>
-                                        [EXPLICAR CÓMO SE DEVUELVEN
-                                        LOS DATOS O EL ESTADO FINAL.]
+                                    <h5>Distribución de abonos y recálculo de cuotas</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Actualizar los saldos de las cuotas y calcular 
+                                        los componentes dinámicos de capital e interés
                                     </p>
-                                    <p>
-                                        <strong>Resultado:</strong>
-                                        [DOCUMENTAR LOS RESULTADOS
-                                        POSIBLES Y LAS CONDICIONES DE FIN.]
+                                    <p><strong>Variables:</strong>
+                                        vAbono, vsaldosdocs, vcuota, vmcuota, vminteres, vmcapital_cuota y vsaldo_doc_restante
+                                    </p>
+                                    <p><strong>Primera condición:</strong>
+                                        Si vAbono es mayor o igual que el saldo de la cuota, se resta 
+                                        dicho saldo del abono y se establece el saldo de la cuota en cero
+                                    </p>
+                                    <p><strong>Segunda condición:</strong>
+                                        Cuando el abono no cubre el saldo, se calcula el 
+                                        interés según la modalidad de la tabla de pagos
+                                    </p>
+                                    <p><strong>Tabla modificada:</strong>
+                                        Se calculan los días de interés modificados a partir de 
+                                        vmint_cuota, vinf_dias_anuales, el saldo inicial y vtasa_int
+                                    </p>
+                                    <p><strong>Tabla no modificada:</strong>
+                                        Para la primera cuota se utiliza la diferencia entre el vencimiento 
+                                        y la fecha de formalización. Para las demás cuotas se utiliza vsol_dias_int
+                                    </p>
+                                    <p><strong>Control de capital:</strong>
+                                        El interés se limita al valor de la cuota. El capital se calcula restando 
+                                        el interés. Si el capital es negativo, se establece en cero. Si supera el 
+                                        saldo restante, se limita al saldo
+                                    </p>
+                                    <p><strong>Efectos:</strong>
+                                        Se actualizan saldo_sdoc, debed_dynamico y haberd_dynamico. Cuando vAbono 
+                                        es mayor que cero en esta rama, el código lo establece posteriormente en cero
                                     </p>
                                 </li>
                             </ol>
-
-                            <p class="helper-text">
-                                Agregar o eliminar pasos según la lógica
-                                real. Documentar entre 5 y 10 pasos
-                                o los necesarios para explicar el proceso
-                                de manera completa.
-                            </p>
                         </section>
 
                         <!-- Reglas de negocio -->
@@ -940,9 +971,15 @@
                             <tbody>
                                 <tr>
                                     <td>1.0</td>
-                                    <td>[DD/MM/AAAA]</td>
-                                    <td>[RESPONSABLE]</td>
+                                    <td>16/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
                                     <td>Creación inicial del documento.</td>
+                                </tr>
+                                <tr>
+                                    <td>1.1</td>
+                                    <td>16/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
+                                    <td>Se creó </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -951,20 +988,10 @@
             </section>
 
             <footer class="document-footer">
-                <p>
-                    <strong>[NOMBRE DEL SISTEMA]</strong>
-                    · Documentación técnica
-                </p>
-
-                <p>
-                    Versión [1.0] · Generado el [DD/MM/AAAA]
-                </p>
-
-                <p class="footer-note">
-                    Documento sujeto a validación por el equipo técnico.
-                </p>
+                <p><strong>DocuFlow</strong> · Documentación técnica</p>
+                <p>Versión 1.0 · Generado el 16/10/2026</p>
+                <p class="footer-note">Documento sujeto a validación por el equipo técnico.</p>
             </footer>
-
         </main>
     </div>
 </body>
