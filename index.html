@@ -126,7 +126,31 @@
                                 </tr>
                                 <tr>
                                     <td>PR-002</td>
-                                    <td><a href="#proceso-001">cálculo de pagos, saldos y cobros</a></td>
+                                    <td><a href="#">Realizar reembolsos</a></td>
+                                    <td><span class="badge badge-green">[TIPO]</span></td>
+                                    <td>[DESCRIPCIÓN_FUNCIONAL]</td>
+                                    <td>[ENTRADA]</td>
+                                    <td>[SALIDA]</td>
+                                </tr>
+                                <tr>
+                                    <td>PR-003</td>
+                                    <td><a href="#">Realizar consignas</a></td>
+                                    <td><span class="badge badge-green">[TIPO]</span></td>
+                                    <td>[DESCRIPCIÓN_FUNCIONAL]</td>
+                                    <td>[ENTRADA]</td>
+                                    <td>[SALIDA]</td>
+                                </tr>
+                                <tr>
+                                    <td>PR-004</td>
+                                    <td><a href="#">Validación de usuario para anulación</a></td>
+                                    <td><span class="badge badge-green">[TIPO]</span></td>
+                                    <td>[DESCRIPCIÓN_FUNCIONAL]</td>
+                                    <td>[ENTRADA]</td>
+                                    <td>[SALIDA]</td>
+                                </tr>
+                                <tr>
+                                    <td>PR-005</td>
+                                    <td><a href="#">cálculo de pagos, saldos y cobros</a></td>
                                     <td><span class="badge badge-green">[TIPO]</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
@@ -137,7 +161,7 @@
                     </div>
 
                     <p class="table-caption">
-                        Total de procesos documentados: [N]
+                        Total de procesos documentados: 5
                     </p>
                 </div>
             </section>
@@ -164,19 +188,13 @@
 
                     <header class="process-header">
                         <div>
-                            <div class="process-kicker">
-                                PROCESO PR-001
-                            </div>
-
-                            <h3>[NOMBRE_PROCESO]</h3>
-
-                            <p>
-                                [DESCRIPCIÓN BREVE DEL OBJETIVO
-                                Y COMPORTAMIENTO DEL PROCESO.]
-                            </p>
+                            <div class="process-kicker">PROCESO PR-001</div>
+                            <h3>Cálculo de pagos, saldos y cobros</h3>
+                            <p>Construye una tabla temporal de cuotas de un crédito, distribuye abonos, calcula los componentes 
+                            dinámicos de capital e intereses y determina los días de mora y el interés moratorio de las cuotas 
+                            con saldo pendiente.</p>
                         </div>
-
-                        <span class="badge badge-green">[VERSIÓN]</span>
+                        <span class="badge badge-green">1.0</span>
                     </header>
 
                     <div class="process-body">
@@ -188,22 +206,22 @@
                             <div class="info-grid">
                                 <div class="info-item">
                                     <span>Tipo</span>
-                                    <strong>[PROCEDIMIENTO / API / ETL]</strong>
+                                    <strong>PROCEDIMIENTO ALMACENADO</strong>
                                 </div>
 
                                 <div class="info-item">
                                     <span>Plataforma</span>
-                                    <strong>[INFORMIX / OTRA]</strong>
+                                    <strong>IBM INFORMIX SPL</strong>
                                 </div>
 
                                 <div class="info-item">
                                     <span>Frecuencia</span>
-                                    <strong>[FRECUENCIA DE EJECUCIÓN]</strong>
+                                    <strong>NO ESPECIFICADA</strong>
                                 </div>
 
                                 <div class="info-item">
                                     <span>Transaccionalidad</span>
-                                    <strong>[CONFIRMAR EN EL CÓDIGO]</strong>
+                                    <strong>NO ESPECIFICADA</strong>
                                 </div>
                             </div>
                         </section>
@@ -211,7 +229,6 @@
                         <!-- Parámetros -->
                         <section class="subsection">
                             <h4>3.2. Parámetros de entrada</h4>
-
                             <div class="table-wrapper">
                                 <table>
                                     <thead>
@@ -222,29 +239,42 @@
                                             <th>Obligatorio</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         <tr>
-                                            <td><code>[PARAMETRO_1]</code></td>
-                                            <td>[TIPO_DATO]</td>
-                                            <td>[DESCRIPCIÓN]</td>
-                                            <td>[SÍ / NO]</td>
+                                            <td><code>pNit</code></td>
+                                            <td>VARCHAR(30)</td>
+                                            <td>Identificador del cliente o entidad utilizado para filtrar los registros relacionados con el crédito.</td>
+                                            <td>No especificado</td>
                                         </tr>
-
                                         <tr>
-                                            <td><code>[PARAMETRO_2]</code></td>
-                                            <td>[TIPO_DATO]</td>
-                                            <td>[DESCRIPCIÓN]</td>
-                                            <td>[SÍ / NO]</td>
+                                            <td><code>pTipoDocumento</code></td>
+                                            <td>CHAR(4)</td>
+                                            <td>Tipo de documento utilizado para identificar el crédito en las consultas.</td>
+                                            <td>No especificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>pNumeroDocumento</code></td>
+                                            <td>BIGINT</td>
+                                            <td>Número del documento asociado al crédito.</td>
+                                            <td>No especificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>pCuenta</code></td>
+                                            <td>VARCHAR(16)</td>
+                                            <td>Cuenta contable utilizada para recuperar las cuotas, movimientos y saldos.</td>
+                                            <td>No especificado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>pFechaCalculo</code></td>
+                                            <td>DATE</td>
+                                            <td>Fecha de referencia para determinar los períodos procesados, los días de mora y los intereses moratorios.</td>
+                                            <td>No especificado</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-
-                            <p class="helper-text">
-                                Si el proceso no recibe parámetros,
-                                indicar expresamente que no aplica.
-                            </p>
+                            <p class="helper-text">La firma no declara explícitamente la obligatoriedad de los parámetros ni 
+                            incluye validaciones iniciales específicas para valores nulos.</p>
                         </section>
 
                         <!-- Salidas -->
@@ -264,19 +294,42 @@
 
                                     <tbody>
                                         <tr>
-                                            <td>[SALIDA_1]</td>
-                                            <td>[TIPO]</td>
-                                            <td>[DESCRIPCIÓN]</td>
-                                            <td>[CONDICIÓN]</td>
+                                            <td>Valor de retorno</td>
+                                            <td>CHAR(100)</td>
+                                            <td>Devuelve explícitamente el valor de carácter "1".</td>
+                                            <td>Al alcanzar la instrucción RETURN "1".</td>
+                                        </tr>
+                                        <tr>
+                                            <td>temp_tabladepagos</td>
+                                            <td>Tabla temporal</td>
+                                            <td>Contiene las cuotas procesadas, los saldos recalculados, los abonos, los días de mora y el interés moratorio.</td>
+                                            <td>Se crea y actualiza durante la ejecución.</td>
+                                        </tr>
+                                         <tr>
+                                            <td>debed_dynamico</td>
+                                            <td>DECIMAL(16,2)</td>
+                                            <td>Componente dinámico de capital calculado para las cuotas que siguen la rama de recálculo.</td>
+                                            <td>Cuando el abono no cubre completamente el saldo de la cuota.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>haberd_dynamico</td>
+                                            <td>DECIMAL(16,2)</td>
+                                            <td>Interés calculado dinámicamente para la cuota procesada.</td>
+                                            <td>Cuando se ejecuta la rama de recálculo.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>int_mora</td>
+                                            <td>DECIMAL(16,2)</td>
+                                            <td>Importe calculado de interés moratorio.</td>
+                                            <td>Cuando el saldo es positivo y los días de mora son mayores que cero.</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-
-                            <p>
-                                <strong>Resultado esperado:</strong>
-                                [DESCRIBIR EL RESULTADO CORRECTO Y LOS
-                                POSIBLES ESTADOS DE FINALIZACIÓN.]
+                            <p><strong>Resultado esperado:</strong>
+                                El procedimiento devuelve "1" si alcanza su instrucción final de retorno. Los cálculos 
+                                detallados permanecen en la tabla temporal y no se devuelven explícitamente mediante un 
+                                conjunto de resultados en el código suministrado.
                             </p>
                         </section>
 
@@ -284,55 +337,169 @@
                         <section class="subsection">
                             <h4>3.4. Diagrama de flujo</h4>
 
-                            <p class="helper-text">
-                                Representación lógica del proceso.
-                                Sustituir el ejemplo por el flujo real.
-                            </p>
-
+                            <p class="helper-text">Flujo lógico de preparación de cuotas, identificación de formalizaciones, distribución 
+                                de abonos, recálculo de saldos y determinación de mora.</p>
                             <pre class="flow-diagram"><code>
-┌────────────────────────────────────┐
-│              INICIO                │
-└─────────────────┬──────────────────┘
-                  ▼
-┌────────────────────────────────────┐
-│ 1. Recibir parámetros de entrada   │
-└─────────────────┬──────────────────┘
-                  ▼
-┌────────────────────────────────────┐
-│ 2. Validar condiciones iniciales   │
-└─────────────────┬──────────────────┘
-                  ▼
-          ┌───────────────┐
-          │ ¿Es válido?   │
-          └───────┬───────┘
-             SÍ   │   NO
-          ┌───────┘   └────────┐
-          ▼                    ▼
-┌──────────────────┐  ┌──────────────────┐
-│ Ejecutar proceso │  │ Registrar error  │
-└────────┬─────────┘  └────────┬─────────┘
-         │                     │
-         ▼                     ▼
-┌──────────────────┐  ┌──────────────────┐
-│ Generar salida   │  │ Salida de error  │
-└────────┬─────────┘  └────────┬─────────┘
-         └──────────┬──────────┘
-                    ▼
-         ┌─────────────────────┐
-         │         FIN         │
-         └─────────────────────┘
+┌──────────────────────────────────────────────────┐
+│                      INICIO                      │
+│ pa_obtienetablapagossaldos_cobros                │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Recibir pNit, pTipoDocumento, pNumeroDocumento,  │
+│ pCuenta y pFechaCalculo                          │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Eliminar la tabla temporal existente y crear     │
+│ temp_tabladepagos                                │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Consultar parámetros de interés, vencimientos,   │
+│ cuotas, saldo inicial, retención y tasa corriente│
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Buscar la fecha e ID de la última formalización  │
+│ tipo SOL                                         │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+                ┌───────────────────────┐
+                │ ¿Fecha SOL es NULL?   │
+                └───────────┬───────────┘
+                       SÍ   │   NO
+              ┌─────────────┘   └─────────────┐
+              ▼                               │
+┌──────────────────────────────┐              │
+│ Buscar formalización CAS     │              │
+│ Obtener fecha e identificador│              │
+└──────────────┬───────────────┘              │
+               └───────────────┬──────────────┘
+                               ▼
+┌──────────────────────────────────────────────────┐
+│ Obtener fecha del último pago                    │
+│ Si es NULL, asignar fecha de formalización       │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Calcular abonos posteriores a la formalización   │
+│ y hasta pFechaCalculo                            │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Detectar tabla de pagos modificada y obtener     │
+│ parámetros de tasa y configuración de mora       │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+              ┌────────────────────────┐
+              │ ¿Quedan cuotas por     │◄────────────┐
+              │ procesar en FOREACH?   │             │
+              └────────────┬───────────┘             │
+                      SÍ   │   NO                    │
+             ┌─────────────┘   └─────────────┐       │
+             ▼                               │       │
+┌──────────────────────────────┐             │       │
+│ Registrar el abono en la     │             │       │
+│ cuota actual                 │             │       │
+└──────────────┬───────────────┘             │       │
+               ▼                             │       │
+       ┌─────────────────────┐               │       │
+       │ ¿Abono >= saldo de  │               │       │
+       │ la cuota?           │               │       │
+       └──────────┬──────────┘               │       │
+             SÍ   │   NO                     │       │
+        ┌─────────┘   └────────────┐         │       │
+        ▼                          ▼         │       │
+┌──────────────────────┐ ┌──────────────────────┐    │
+│ Restar el saldo de   │ │ Calcular interés     │    │
+│ la cuota al abono    │ │ según modalidad      │    │
+│ Establecer saldo = 0 │ └──────────┬───────────┘    │
+└──────────┬───────────┘            ▼                │
+           │             ┌────────────────────────┐  │
+           │             │ Limitar interés al     │  │
+           │             │ valor de la cuota      │  │
+           │             └──────────┬─────────────┘  │
+           │                        ▼                │
+           │             ┌────────────────────────┐  │
+           │             │ Calcular capital y     │  │
+           │             │ evitar saldo negativo  │  │
+           │             └──────────┬─────────────┘  │
+           │                        ▼                │
+           │             ┌────────────────────────┐  │
+           │             │ Actualizar saldo,      │  │
+           │             │ capital e intereses    │  │
+           │             └──────────┬─────────────┘  │
+           └────────────────────────┴────────────────┘
+                                    ▼
+                         ┌─────────────────────┐
+                         │ Siguiente iteración │
+                         └──────────┬──────────┘
+                                    └───────────────►
+                         Regresar a FOREACH
+
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Obtener la fecha y el número de la última cuota  │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+              ┌──────────────────────────┐
+              │ ¿Último vencimiento es   │
+              │ anterior a fecha cálculo?│
+              └────────────┬─────────────┘
+                      SÍ   │   NO
+             ┌─────────────┘   └─────────────┐
+             ▼                               │
+┌──────────────────────────────┐             │
+│ Calcular el primer día del   │             │
+│ siguiente mes                │             │
+└──────────────┬───────────────┘             │
+               ▼                             │
+      ┌────────────────────────┐             │
+      │ ¿Fecha generada <      │◄───────┐    │
+      │ pFechaCalculo?         │        │    │
+      └───────────┬────────────┘        │    │
+             SÍ   │   NO                │    │
+        ┌─────────┘   └──────────────┐  │    │
+        ▼                            │  │    │
+┌──────────────────────────────┐     │  │    │
+│ Insertar cuota adicional     │     │  │    │
+│ con saldo cero               │     │  │    │
+└──────────────┬───────────────┘     │  │    │
+               ▼                     │  │    │
+┌──────────────────────────────┐     │  │    │
+│ Avanzar al siguiente mes     │─────┘  │    │
+└──────────────────────────────┘        │    │
+                                        └────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Calcular días de mora y días a fecha de cálculo  │
+│ para las cuotas con saldo pendiente              │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Obtener la fecha mínima de vencimiento pendiente │
+│ y calcular días relativos a la cuota             │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ Calcular int_mora si saldo_sdoc > 0              │
+│ y dias_mora > 0                                  │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+┌──────────────────────────────────────────────────┐
+│ RETURN "1"                                       │
+└────────────────────────┬─────────────────────────┘
+                         ▼
+                   ┌───────────┐
+                   │    FIN    │
+                   └───────────┘
                             </code></pre>
 
                             <div class="callout callout-warning">
                                 <strong>Importante</strong>
-                                <p>
-                                    Este diagrama es ilustrativo.
-                                    No representa necesariamente la lógica
-                                    real del procedimiento documentado.
-                                    Confirmar las condiciones, los bucles,
-                                    las excepciones y las salidas contra
-                                    el código fuente.
-                                </p>
+                                <p>El diagrama resume el flujo del código fuente. La consulta de formalización CAS presenta una posible 
+                                inconsistencia en la asignación del identificador de movimiento. Debe verificarse antes de considerar el flujo validado.</p>
                             </div>
                         </section>
 
@@ -342,101 +509,123 @@
 
                             <ol class="step-list">
                                 <li>
-                                    <h5>Recepción de parámetros</h5>
-                                    <p>
-                                        <strong>Propósito:</strong>
-                                        [EXPLICAR QUÉ INFORMACIÓN RECIBE
-                                        EL PROCESO Y PARA QUÉ SE UTILIZA.]
+                                    <h5>Preparación de la tabla temporal</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Preparar una estructura de trabajo para almacenar las cuotas que serán procesadas
                                     </p>
-                                    <p>
-                                        <strong>Variables:</strong>
-                                        [VARIABLES RELACIONADAS.]
+                                    <p><strong>Variables:</strong>
+                                        temp_tabladepagos
                                     </p>
-                                    <p>
-                                        <strong>Efectos:</strong>
-                                        [EFECTOS OBSERVABLES, SI EXISTEN.]
+                                    <p><strong>Operaciones:</strong>
+                                        Se elimina la tabla temporal si existe y posteriormente se crea con columnas para 
+                                        identificación del crédito, saldos, cuotas, vencimientos, abonos e intereses
                                     </p>
-                                </li>
-
-                                <li>
-                                    <h5>Validación inicial</h5>
-                                    <p>
-                                        <strong>Propósito:</strong>
-                                        [DESCRIBIR LAS VALIDACIONES
-                                        DE PARÁMETROS Y PRECONDICIONES.]
-                                    </p>
-                                    <p>
-                                        <strong>Condición:</strong>
-                                        [INDICAR LA EXPRESIÓN EVALUADA.]
-                                    </p>
-                                    <p>
-                                        <strong>Resultado:</strong>
-                                        [EXPLICAR QUÉ SUCEDE SI SE CUMPLE
-                                        O NO LA CONDICIÓN.]
+                                     <p><strong>Efectos:</strong>
+                                        Se reinicia la estructura temporal utilizada por el procedimiento
                                     </p>
                                 </li>
 
                                 <li>
-                                    <h5>Consulta o lectura de datos</h5>
-                                    <p>
-                                        <strong>Propósito:</strong>
-                                        [IDENTIFICAR LAS CONSULTAS,
-                                        LAS TABLAS Y LOS FILTROS UTILIZADOS.]
+                                    <h5>Lectura de parámetros de cálculo</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Obtener los parámetros que intervienen en los cálculos de intereses
                                     </p>
-                                    <p>
-                                        <strong>Resultado:</strong>
-                                        [DESCRIBIR LOS DATOS RECUPERADOS
-                                        Y EL TRATAMIENTO DE RESULTADOS VACÍOS.]
+                                    <p><strong>Variables:</strong>
+                                        vsol_dias_int y vinf_dias_anuales
                                     </p>
-                                </li>
-
-                                <li>
-                                    <h5>Aplicación de reglas de negocio</h5>
-                                    <p>
-                                        <strong>Propósito:</strong>
-                                        [EXPLICAR LOS CÁLCULOS, LAS
-                                        CONDICIONES Y LAS DECISIONES.]
+                                    <p><strong>Operaciones:</strong>
+                                        se consulta t_pagos_parametro mediante SELECT LIMIT 1 para 
+                                        recuperar la cantidad de días de interés y la base anual
                                     </p>
-                                    <p>
-                                        <strong>Ramas:</strong>
-                                        [DOCUMENTAR CADA CAMINO IF / ELSE
-                                        Y SUS CONSECUENCIAS.]
+                                    <p><strong>Condiciones:</strong>
+                                        El código no muestra una validación explícita para el caso en 
+                                        que la consulta no proporcione los parámetros esperados
                                     </p>
                                 </li>
 
                                 <li>
-                                    <h5>Procesamiento de registros</h5>
-                                    <p>
-                                        <strong>Propósito:</strong>
-                                        [DESCRIBIR LAS OPERACIONES SOBRE
-                                        LOS REGISTROS O ELEMENTOS.]
+                                    <h5>Obtención de vencimientos y cuotas</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Determinar las cuotas iniciales que serán incluidas en la tabla temporal
                                     </p>
-                                    <p>
-                                        <strong>Iteración:</strong>
-                                        [INDICAR EL INICIO, LA CONDICIÓN
-                                        DE CONTINUACIÓN Y LA SALIDA
-                                        DE CADA BUCLE, SI EXISTE.]
+                                    <p><strong>Variables:</strong>
+                                        vFechaMaxima y vAbono
                                     </p>
-                                </li>
-
-                                <li>
-                                    <h5>Persistencia de datos</h5>
-                                    <p>
-                                        <strong>Propósito:</strong>
-                                        [EXPLICAR LAS INSERCIONES,
-                                        ACTUALIZACIONES O ELIMINACIONES,
-                                        SI EXISTEN.]
+                                    <p><strong>Operaciones:</strong>
+                                        Se obtiene MAX(f_vence) desde sdocs utilizando el NIT, tipo de documento, 
+                                        número, cuenta, ano_mesd igual a cero y cuota mayor que cero. Si la fecha 
+                                        máxima es NULL, se asigna pFechaCalculo
                                     </p>
-                                    <p>
-                                        <strong>Transacción:</strong>
-                                        [DOCUMENTAR COMMIT, ROLLBACK
-                                        Y MANEJO TRANSACCIONAL SOLO
-                                        CUANDO ESTÉN CONFIRMADOS.]
+                                    <p><strong>Resultado:</strong>
+                                        Se insertan las cuotas que cumplen los filtros y cuya fecha de vencimiento 
+                                        no supera vFechaMaxima
                                     </p>
                                 </li>
 
                                 <li>
-                                    <h5>Gestión de excepciones</h5>
+                                    <h5>Obtención del saldo inicial y la tasa corriente</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Recuperar los valores de referencia para el cálculo dinámico de las cuotas
+                                    </p>
+                                    <p><strong>Variables:</strong>
+                                        vsaldo_doc, vretencion, vmsaldo_inicial_prestamo, vmcuota, vsaldo_doc_restante y vtasa_int
+                                    </p>
+                                    <p><strong>Operaciones:</strong>
+                                        se consulta docs para obtener el saldo del documento, la retención y el valor 
+                                        inicial. También se consulta sdocs para obtener el saldo de la cuota número dos
+                                    </p>
+                                    <p><strong>Cálculo:</strong>
+                                        vsaldo_doc_restante se inicializa con la suma del saldo del documento 
+                                        y la retención, sustituyendo valores NULL por cero
+                                    </p>
+                                    <p><strong>Dependencia:</strong>
+                                        fn_informa_trae_i_corriente proporciona la tasa de interés corriente del crédito
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Identificación de la última formalización</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Establecer la referencia temporal y el identificador de movimiento a partir de los comprobantes de formalización
+                                    </p>
+                                    <p><strong>Variables:</strong>
+                                        vFechaUltimaFormalizacion y vIdUltimaFormalizacion
+                                    </p>
+                                    <p><strong>Condición:</strong>
+                                        Primero se busca la fecha máxima y el ID máximo de movimientos positivos asociados a comprobantes de tipo SOL
+                                    </p>
+                                    <p><strong>Rama alternativa:</strong>
+                                        Si la fecha obtenida es NULL, se consulta la formalización CAS
+                                    </p>
+                                    <p><strong>Observación:</strong>
+                                        En la segunda consulta CAS se asigna MAX(fecha) a vIdUltimaFormalizacion.
+                                        Debe verificarse si debería utilizarse MAX(id_movi)
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5>Cálculo del último pago y los abonos</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Identificar el último pago registrado y determinar el importe disponible para aplicarlo a las cuotas
+                                    </p>
+                                    <p><strong>Variables:</strong>
+                                        vFechaUltimoPago, vFechaUltimaFormalizacion, vIdUltimaFormalizacion y vAbono
+                                    </p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se obtiene la fecha máxima de movimientos positivos con comprobantes 
+                                        RC o SOL. Si no existe, se utiliza la fecha de formalización
+                                    </p>
+                                    <p><strong>Reglas:</strong>
+                                        Se excluyen los comprobantes SOL y CAS del cálculo de abonos. Los movimientos cuya descripción 
+                                        coincide con %INT%COR% reciben un factor de cero. El signo del importe depende de deb_cre
+                                    </p>
+                                    <p><strong>Resultado:</strong>
+                                        Si la suma calculada es NULL, vAbono se establece en cero
+                                    </p>
+                                </li>
+
+                                <li>
+                                    <h5></h5>
                                     <p>
                                         <strong>Propósito:</strong>
                                         [IDENTIFICAR LOS ERRORES
@@ -450,7 +639,7 @@
                                 </li>
 
                                 <li>
-                                    <h5>Generación de la salida</h5>
+                                    <h5></h5>
                                     <p>
                                         <strong>Propósito:</strong>
                                         [EXPLICAR CÓMO SE DEVUELVEN
