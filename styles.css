@@ -429,12 +429,14 @@ h5 {
 }
 
 .process-header p {
-    margin-bottom: 0;
+    width: 52rem;
+    text-align: justify;
     color: #dceaf5;
 }
 
 .process-kicker {
     margin-bottom: var(--space-2);
+    width: 24rem;
     color: #c8e3f5;
     font-size: 0.75rem;
     font-weight: 800;
@@ -508,7 +510,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .table-wrapper table {
@@ -759,6 +761,11 @@ td code {
     .sidebar-note {
         margin-top: var(--space-3);
     }
+
+    .process-header p {
+        width: 32rem;
+        text-align: justify;
+    }
 }
 
 /* ==========================================
@@ -810,6 +817,11 @@ td code {
 
     .process-header {
         flex-direction: column;
+    }
+
+    .process-header p {
+        width: 24rem;
+        text-align: justify;
     }
 
     .info-grid {

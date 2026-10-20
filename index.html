@@ -15,26 +15,26 @@
             <div class="hero-top">
                 <span class="eyebrow">DOCUMENTACIÓN TÉCNICA</span>
                 <div class="hero-badges">
-                    <span class="badge badge-version">Versión 2.0</span>
-                    <span class="badge badge-date">19/10/2026</span>
+                    <span class="badge badge-version">Versión 8.0</span>
+                    <span class="badge badge-date">20/10/2026</span>
                 </div>
             </div>
 
             <h1>DocuFlow</h1>
-            <p class="hero-description">Documentación técnica de procesos | Informix / SQL / APIs / ETL</p>
+            <p class="hero-description">Documentación técnica de procesos SPLs | Informix</p>
 
             <div class="hero-meta">
                 <div>
                     <span class="meta-label">Responsable</span>
-                    <strong>Alejandro De Jesús Solano Ruiz</strong>
+                    <strong>ALEJANDRO DE JESÚS SOLANO RUIZ</strong>
                 </div>
                 <div>
                     <span class="meta-label">Entorno</span>
-                    <strong>[DESARROLLO / QA / PRODUCCIÓN]</strong>
+                    <strong>DOCUMENTACIÓN</strong>
                 </div>
                 <div>
                     <span class="meta-label">Estado</span>
-                    <strong class="status status-active">Documentación en revisión</strong>
+                    <strong class="status status-active">DOCUMENTACIÓN EN REVISIÓN</strong>
                 </div>
             </div>
         </div>
@@ -182,7 +182,7 @@
                                 </tr>
                                 <tr>
                                     <td>PR-009</td>
-                                    <td><a href="#proceso-009">cálculo de pagos, saldos y cobros</a></td>
+                                    <td><a href="#proceso-009">Detalles de transacción</a></td>
                                     <td><span class="badge badge-green">[TIPO]</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
@@ -289,7 +289,7 @@
                     en el código fuente.
                 -->
                 
-                <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
 
                 <article id="proceso-001" class="process-card">
 
@@ -1146,7 +1146,7 @@ EXECUTE PROCEDURE
                 </article>
 
                 
-                <!---------------- SEPERADOR ---------------->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
                 
 
                 <article id="proceso-002" class="process-card">
@@ -1159,7 +1159,7 @@ EXECUTE PROCEDURE
                             dinámicos de capital e intereses y determina los días de mora y el interés moratorio de las cuotas 
                             con saldo pendiente.</p>
                         </div>
-                        <span class="badge badge-green">1.0</span>
+                        <span class="badge badge-green">2.0</span>
                     </header>
 
                     <div class="process-body">
@@ -2019,20 +2019,20 @@ EXECUTE PROCEDURE
                 </article>
 
 
-                 <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-                <article id="proceso-004" class="process-card">
+                <article id="proceso-003" class="process-card">
 
                     <header class="process-header">
                         <div>
-                            <div class="process-kicker">PROCESO PR-004</div>
-                            <h3>Cálculo de pagos, saldos y cobros</h3>
+                            <div class="process-kicker">PROCESO PR-003</div>
+                            <h3>Realizar consignas</h3>
                             <p>Construye una tabla temporal de cuotas de un crédito, distribuye abonos, calcula los componentes 
                             dinámicos de capital e intereses y determina los días de mora y el interés moratorio de las cuotas 
                             con saldo pendiente.</p>
                         </div>
-                        <span class="badge badge-green">4.0</span>
+                        <span class="badge badge-green">3.0</span>
                     </header>
 
                     <div class="process-body">
@@ -2929,20 +2929,20 @@ EXECUTE PROCEDURE
                 </article>
 
                 
-                <!---------------- SEPERADOR ---------------->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
                 
 
-                <article id="proceso-002" class="process-card">
+                <article id="proceso-004" class="process-card">
 
                     <header class="process-header">
                         <div>
-                            <div class="process-kicker">PROCESO PR-002</div>
+                            <div class="process-kicker">PROCESO PR-004</div>
                             <h3>Realizar desembolso</h3>
                             <p>Construye una tabla temporal de cuotas de un crédito, distribuye abonos, calcula los componentes 
                             dinámicos de capital e intereses y determina los días de mora y el interés moratorio de las cuotas 
                             con saldo pendiente.</p>
                         </div>
-                        <span class="badge badge-green">1.0</span>
+                        <span class="badge badge-green">4.0</span>
                     </header>
 
                     <div class="process-body">
@@ -3802,43 +3802,39 @@ EXECUTE PROCEDURE
                 </article>
 
 
-                <!-- --------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
 
 
-                <article id="proceso-011" class="process-card">
-
+                <article id="proceso-009" class="process-card">
                     <header class="process-header">
                         <div>
-                            <div class="process-kicker">PROCESO PR-011</div>
-                            <h3>Consigna de cuentas</h3>
-                            <p>Desarrollar un sistema que permita procesar información financiera
-                                para la rendición de cuentas de mercancías o fondos de consignación.</p>
-                        </div>
-                        <span class="badge badge-green">11.0</span>
+                            <div class="process-kicker">PROCESO PR-009</div>
+                            <h3>Consulta de información de una transacción</h3>
+                            <p>Obtiene los datos asociados a una transacción financiera, incluyendo 
+                                identificación del contribuyente, documento, centro de costo, monto 
+                                a pagar y datos del comprobante. Devuelve la información en formato JSON</p>
+                            </div>
+                            <span class="badge badge-green">9.0</span>
                     </header>
-
+                    
                     <div class="process-body">
-
+                        
                         <!-- Identificación -->
                         <section class="subsection">
                             <h4>3.1. Identificación del proceso</h4>
-
                             <div class="info-grid">
                                 <div class="info-item">
                                     <span>Tipo</span>
                                     <strong>PROCEDIMIENTO ALMACENADO</strong>
                                 </div>
-
                                 <div class="info-item">
                                     <span>Plataforma</span>
                                     <strong>IBM INFORMIX SPL</strong>
                                 </div>
-
                                 <div class="info-item">
                                     <span>Frecuencia</span>
                                     <strong>NO ESPECIFICADA</strong>
                                 </div>
-
                                 <div class="info-item">
                                     <span>Transaccionalidad</span>
                                     <strong>NO ESPECIFICADA</strong>
@@ -3861,22 +3857,23 @@ EXECUTE PROCEDURE
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><code>pcodigo_asignacion</code></td>
-                                            <td>INT</td>
-                                            <td>Se almacena como identificar para cuando se realicen consultas, poder encontrar estas mucho más fáciles</td>
+                                            <td><code>pcodigo_transaccion</code></td>
+                                            <td>VARCHAR(10)</td>
+                                            <td>Código utilizado para localizar los registros de 
+                                                la transacción en la tabla <code>t_cajas_transaccion_pago</code></td>
                                             <td>No especificado</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                            <p class="helper-text">La firma no declara explícitamente la obligatoriedad de los parámetros ni 
-                            incluye validaciones iniciales específicas para valores nulos.</p>
+                            <p class="helper-text">El procedimiento no declara una validación inicial
+                                explícita para comprobar si el código es nulo, está vacío o corresponde 
+                                a una transacción existente</p>
                         </section>
 
                         <!-- Salidas -->
                         <section class="subsection">
                             <h4>3.3. Valores de retorno y salidas</h4>
-
                             <div class="table-wrapper">
                                 <table>
                                     <thead>
@@ -3887,403 +3884,307 @@ EXECUTE PROCEDURE
                                             <th>Condición</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         <tr>
                                             <td>Valor de retorno</td>
                                             <td>CHAR(31000)</td>
-                                            <td>Devuelve explícitamente el valor de carácter "1".</td>
-                                            <td>Al alcanzar la instrucción RETURN "1".</td>
+                                            <td>Cadena que contiene el resultado de la consulta estructurado como JSON</td>
+                                            <td>Al finalizar correctamente o al ejecutar el retorno del manejador de excepciones</td>
                                         </tr>
                                         <tr>
-                                            <td>temp_tabladepagos</td>
-                                            <td>Tabla temporal</td>
-                                            <td>Contiene las cuotas procesadas, los saldos recalculados, los abonos, los días de mora y el interés moratorio.</td>
-                                            <td>Se crea y actualiza durante la ejecución.</td>
-                                        </tr>
-                                         <tr>
-                                            <td>debed_dynamico</td>
-                                            <td>DECIMAL(16,2)</td>
-                                            <td>Componente dinámico de capital calculado para las cuotas que siguen la rama de recálculo.</td>
-                                            <td>Cuando el abono no cubre completamente el saldo de la cuota.</td>
+                                            <td><code>vResultado</code></td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Almacena el JSON de respuesta y los objetos correspondientes a los registros consultados</td>
+                                            <td>Se inicializa antes del recorrido y se completa durante el FOREACH</td>
                                         </tr>
                                         <tr>
-                                            <td>haberd_dynamico</td>
-                                            <td>DECIMAL(16,2)</td>
-                                            <td>Interés calculado dinámicamente para la cuota procesada.</td>
-                                            <td>Cuando se ejecuta la rama de recálculo.</td>
+                                            <td><code>vNit</code></td>
+                                            <td>VARCHAR(50)</td>
+                                            <td>Identificación obtenida de <code>a.nit</code></td>
+                                            <td>Por cada registro recuperado</td>
                                         </tr>
                                         <tr>
-                                            <td>int_mora</td>
-                                            <td>DECIMAL(16,2)</td>
-                                            <td>Importe calculado de interés moratorio.</td>
-                                            <td>Cuando el saldo es positivo y los días de mora son mayores que cero.</td>
+                                            <td><code>vTipo_Doc</code></td>
+                                            <td>VARCHAR(4)</td>
+                                            <td>Tipo de documento obtenido de <code>a.tipo_doc</code></td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vNumero_Doc</code></td>
+                                            <td>INT</td>
+                                            <td>Número de documento obtenido de <code>a.numero_doc</code></td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCentro_Costo</code></td>
+                                            <td>VARCHAR(100)</td>
+                                            <td>Centro de costo obtenido de <code>a.centro_costo</code>. 
+                                                Si es NULL, se sustituye por una cadena vacía</td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vMonto_Pagar</code></td>
+                                            <td>DECIMAL(18,2)</td>
+                                            <td>Monto a pagar obtenido de <code>a.monto_pagar</code></td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCodigo_Pago</code></td>
+                                            <td>INT</td>
+                                            <td>Código de pago asociado a la transacción. Se sustituye 
+                                                por cero si el campo consultado es NULL</td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vComprobante</code></td>
+                                            <td>VARCHAR(10)</td>
+                                            <td>Comprobante obtenido de <code>b.comprobante</code>. 
+                                                Si es NULL, se sustituye por una cadena vacía</td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vNumero</code></td>
+                                            <td>INT</td>
+                                            <td>Número obtenido de <code>b.numero</code>. 
+                                                Si es NULL, se sustituye por cero.</td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Respuesta de error</td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Intenta devolver un JSON con el resultado de error, el código y el mensaje</td>
+                                            <td>Cuando se produce una excepción capturada por ON EXCEPTION</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                             <p><strong>Resultado esperado:</strong>
-                                El procedimiento devuelve "1" si alcanza su instrucción final de retorno. Los cálculos 
-                                detallados permanecen en la tabla temporal y no se devuelven explícitamente mediante un 
-                                conjunto de resultados en el código suministrado.
-                            </p>
+                                una cadena JSON con la estructura de éxito y una lista de 
+                                registros bajo <code>Data.data</code>. En caso de excepción, 
+                                se intenta devolver información del error. La validez del 
+                                JSON de error debe verificarse</p>
                         </section>
 
                         <!-- Diagrama -->
                         <section class="subsection">
                             <h4>3.4. Diagrama de flujo</h4>
-
-                            <p class="helper-text">Flujo lógico de preparación de cuotas, identificación de formalizaciones, distribución 
-                                de abonos, recálculo de saldos y determinación de mora.</p>
-                            <pre class="flow-diagram"><code>
-┌──────────────────────────────────────────────────┐
-│                      INICIO                      │
-│ pa_obtienetablapagossaldos_cobros                │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Recibir pNit, pTipoDocumento, pNumeroDocumento,  │
-│ pCuenta y pFechaCalculo                          │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Eliminar la tabla temporal existente y crear     │
-│ temp_tabladepagos                                │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Consultar parámetros de interés, vencimientos,   │
-│ cuotas, saldo inicial, retención y tasa corriente│
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Buscar la fecha e ID de la última formalización  │
-│ tipo SOL                                         │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-                ┌───────────────────────┐
-                │ ¿Fecha SOL es NULL?   │
-                └───────────┬───────────┘
-                       SÍ   │   NO
-              ┌─────────────┘   └─────────────┐
-              ▼                               │
-┌──────────────────────────────┐              │
-│ Buscar formalización CAS     │              │
-│ Obtener fecha e identificador│              │
-└──────────────┬───────────────┘              │
-               └───────────────┬──────────────┘
-                               ▼
-┌──────────────────────────────────────────────────┐
-│ Obtener fecha del último pago                    │
-│ Si es NULL, asignar fecha de formalización       │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Calcular abonos posteriores a la formalización   │
-│ y hasta pFechaCalculo                            │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Detectar tabla de pagos modificada y obtener     │
-│ parámetros de tasa y configuración de mora       │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-              ┌────────────────────────┐
-              │ ¿Quedan cuotas por     │◄────────────┐
-              │ procesar en FOREACH?   │             │
-              └────────────┬───────────┘             │
-                      SÍ   │   NO                    │
-             ┌─────────────┘   └─────────────┐       │
-             ▼                               │       │
-┌──────────────────────────────┐             │       │
-│ Registrar el abono en la     │             │       │
-│ cuota actual                 │             │       │
-└──────────────┬───────────────┘             │       │
-               ▼                             │       │
-       ┌─────────────────────┐               │       │
-       │ ¿Abono >= saldo de  │               │       │
-       │ la cuota?           │               │       │
-       └──────────┬──────────┘               │       │
-             SÍ   │   NO                     │       │
-        ┌─────────┘   └────────────┐         │       │
-        ▼                          ▼         │       │
-┌──────────────────────┐ ┌──────────────────────┐    │
-│ Restar el saldo de   │ │ Calcular interés     │    │
-│ la cuota al abono    │ │ según modalidad      │    │
-│ Establecer saldo = 0 │ └──────────┬───────────┘    │
-└──────────┬───────────┘            ▼                │
-           │             ┌────────────────────────┐  │
-           │             │ Limitar interés al     │  │
-           │             │ valor de la cuota      │  │
-           │             └──────────┬─────────────┘  │
-           │                        ▼                │
-           │             ┌────────────────────────┐  │
-           │             │ Calcular capital y     │  │
-           │             │ evitar saldo negativo  │  │
-           │             └──────────┬─────────────┘  │
-           │                        ▼                │
-           │             ┌────────────────────────┐  │
-           │             │ Actualizar saldo,      │  │
-           │             │ capital e intereses    │  │
-           │             └──────────┬─────────────┘  │
-           └────────────────────────┴────────────────┘
-                                    ▼
-                         ┌─────────────────────┐
-                         │ Siguiente iteración │
-                         └──────────┬──────────┘
-                                    └───────────────►
-                         Regresar a FOREACH
-
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Obtener la fecha y el número de la última cuota  │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-              ┌──────────────────────────┐
-              │ ¿Último vencimiento es   │
-              │ anterior a fecha cálculo?│
-              └────────────┬─────────────┘
-                      SÍ   │   NO
-             ┌─────────────┘   └─────────────┐
-             ▼                               │
-┌──────────────────────────────┐             │
-│ Calcular el primer día del   │             │
-│ siguiente mes                │             │
-└──────────────┬───────────────┘             │
-               ▼                             │
-      ┌────────────────────────┐             │
-      │ ¿Fecha generada <      │◄───────┐    │
-      │ pFechaCalculo?         │        │    │
-      └───────────┬────────────┘        │    │
-             SÍ   │   NO                │    │
-        ┌─────────┘   └──────────────┐  │    │
-        ▼                            │  │    │
-┌──────────────────────────────┐     │  │    │
-│ Insertar cuota adicional     │     │  │    │
-│ con saldo cero               │     │  │    │
-└──────────────┬───────────────┘     │  │    │
-               ▼                     │  │    │
-┌──────────────────────────────┐     │  │    │
-│ Avanzar al siguiente mes     │─────┘  │    │
-└──────────────────────────────┘        │    │
-                                        └────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Calcular días de mora y días a fecha de cálculo  │
-│ para las cuotas con saldo pendiente              │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Obtener la fecha mínima de vencimiento pendiente │
-│ y calcular días relativos a la cuota             │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ Calcular int_mora si saldo_sdoc > 0              │
-│ y dias_mora > 0                                  │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-┌──────────────────────────────────────────────────┐
-│ RETURN "1"                                       │
-└────────────────────────┬─────────────────────────┘
-                         ▼
-                   ┌───────────┐
-                   │    FIN    │
-                   └───────────┘
-                            </code></pre>
-
+                            
+                            <p class="helper-text">Flujo de inicialización, consulta 
+                                de la transacción, construcción de los objetos JSON y 
+                                retorno del resultado</p>
+                                
+                                <pre class="flow-diagram"><code>
+┌─────────────────────────────────────────────┐
+│                    INICIO                   │
+│           pa_dar_info_transaccion            │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Recibir pcodigo_transaccion                 │
+│ VARCHAR(10)                                 │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Inicializar vObjeto con el nombre           │
+│ del procedimiento                           │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Configurar ON EXCEPTION                     │
+│ para capturar código, ISAM y mensaje         │
+└──────────────────────┬──────────────────────┘
+                       ▼
+              ┌─────────────────┐
+              │ ¿Hay excepción? │
+              └───────┬─────────┘
+                 SÍ   │   NO
+              ┌───────┘   └─────────────────────┐
+              ▼                                 ▼
+┌──────────────────────────────┐  ┌────────────────────────────┐
+│ Completar mensaje si está    │  │ Inicializar vComma         │
+│ vacío                        │  │ y vResultado               │
+└──────────────┬───────────────┘  └──────────────┬─────────────┘
+               ▼                                 ▼
+┌──────────────────────────────┐  ┌────────────────────────────┐
+│ Construir respuesta de error │  │ Ejecutar SELECT con        │
+│ y retornar el JSON           │  │ LEFT JOIN                  │
+└──────────────────────────────┘  └──────────────┬─────────────┘
+                                                ▼
+                                  ┌────────────────────────────┐
+                                  │ Filtrar por                │
+                                  │ pcodigo_transaccion        │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ ¿Hay registros?            │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ FOREACH: cargar las        │
+                                  │ columnas en variables      │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Construir objeto JSON      │
+                                  │ con los datos del registro │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Establecer vComma = ','    │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ ¿Quedan registros?         │
+                                  └──────────────┬─────────────┘
+                                                 │
+                                    SÍ ──────────┘
+                                                 │ NO
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Cerrar arreglo y objetos   │
+                                  │ JSON con ]}}               │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ RETURN vResultado         │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │             FIN            │
+                                  └────────────────────────────┘
+                                </code></pre>
+                                
                             <div class="callout callout-warning">
                                 <strong>Importante</strong>
-                                <p>El diagrama resume el flujo del código fuente. La consulta de formalización 
-                                    CAS presenta una posible inconsistencia en la asignación del identificador 
-                                    de movimiento. Debe verificarse antes de considerar el flujo validado.</p>
+                                <p>El diagrama representa el flujo previsto del código. La 
+                                    construcción de la respuesta de error debe revisarse 
+                                    porque el texto generado puede no constituir un JSON 
+                                    válido. Además, el bloque ON EXCEPTION debe verificarse
+                                    con la versión y el entorno de Informix utilizados</p>
                             </div>
                         </section>
 
                         <!-- Paso a paso -->
                         <section class="subsection">
                             <h4>3.5. Desglose paso a paso</h4>
-
+                            
                             <ol class="step-list">
                                 <li>
-                                    <h5>Preparación de la tabla temporal</h5>
+                                    <h5>Declaración de variables</h5>
                                     <p><strong>Propósito:</strong>
-                                        Preparar una estructura de trabajo para almacenar las cuotas que serán procesadas
-                                    </p>
+                                        Preparar las variables para almacenar los campos 
+                                        consultados, controlar las excepciones y construir 
+                                        la respuesta JSON</p>   
                                     <p><strong>Variables:</strong>
-                                        temp_tabladepagos
-                                    </p>
-                                    <p><strong>Operaciones:</strong>
-                                        Se elimina la tabla temporal si existe y posteriormente se crea con columnas para 
-                                        identificación del crédito, saldos, cuotas, vencimientos, abonos e intereses
-                                    </p>
-                                     <p><strong>Efectos:</strong>
-                                        Se reinicia la estructura temporal utilizada por el procedimiento
-                                    </p>
+                                        vNit, vTipo_Doc, vNumero_Doc, vCentro_Costo, 
+                                        vMonto_Pagar, vCodigo_Pago, vComprobante, vNumero, 
+                                        vComma, vCodError, vISAMValue, vTextoResultado, 
+                                        vObjeto y vResultado</p>
+                                    <p><strong>Efecto:</strong>
+                                        Se establecen los tipos de datos y las capacidades 
+                                        de almacenamiento para el procedimiento</p>
                                 </li>
-
                                 <li>
-                                    <h5>Lectura de parámetros de cálculo</h5>
+                                    <h5>Identificación del objeto</h5>
                                     <p><strong>Propósito:</strong>
-                                        Obtener los parámetros que intervienen en los cálculos de intereses
-                                    </p>
-                                    <p><strong>Variables:</strong>
-                                        vsol_dias_int y vinf_dias_anuales
-                                    </p>
-                                    <p><strong>Operaciones:</strong>
-                                        se consulta t_pagos_parametro mediante SELECT LIMIT 1 para 
-                                        recuperar la cantidad de días de interés y la base anual
-                                    </p>
-                                    <p><strong>Condiciones:</strong>
-                                        El código no muestra una validación explícita para el caso en 
-                                        que la consulta no proporcione los parámetros esperados
-                                    </p>
-                                </li>
-
-                                <li>
-                                    <h5>Obtención de vencimientos y cuotas</h5>
-                                    <p><strong>Propósito:</strong>
-                                        Determinar las cuotas iniciales que serán incluidas en la tabla temporal
-                                    </p>
-                                    <p><strong>Variables:</strong>
-                                        vFechaMaxima y vAbono
-                                    </p>
-                                    <p><strong>Operaciones:</strong>
-                                        Se obtiene MAX(f_vence) desde sdocs utilizando el NIT, tipo de documento, 
-                                        número, cuenta, ano_mesd igual a cero y cuota mayor que cero. Si la fecha 
-                                        máxima es NULL, se asigna pFechaCalculo
-                                    </p>
+                                        Identificar el procedimiento para utilizar 
+                                        esa referencia en los mensajes de error</p>
+                                    <p><strong>Operación:</strong>
+                                        Se asigna el texto <code>pa_dar_info_transaccion</code> 
+                                        a <code>vObjeto</code></p>
                                     <p><strong>Resultado:</strong>
-                                        Se insertan las cuotas que cumplen los filtros y cuya fecha de vencimiento 
-                                        no supera vFechaMaxima
-                                    </p>
+                                        La variable queda disponible para la construcción del 
+                                        mensaje alternativo del manejador de excepciones</p>
                                 </li>
-
                                 <li>
-                                    <h5>Obtención del saldo inicial y la tasa corriente</h5>
+                                    <h5>Configuración del manejo de excepciones</h5>
                                     <p><strong>Propósito:</strong>
-                                        Recuperar los valores de referencia para el cálculo dinámico de las cuotas
-                                    </p>
-                                    <p><strong>Variables:</strong>
-                                        vsaldo_doc, vretencion, vmsaldo_inicial_prestamo, vmcuota, 
-                                        vsaldo_doc_restante y vtasa_int
-                                    </p>
-                                    <p><strong>Operaciones:</strong>
-                                        se consulta docs para obtener el saldo del documento, la retención y 
-                                        el valor inicial. También se consulta sdocs para obtener el saldo de 
-                                        la cuota número dos
-                                    </p>
-                                    <p><strong>Cálculo:</strong>
-                                        vsaldo_doc_restante se inicializa con la suma del saldo del documento 
-                                        y la retención, sustituyendo valores NULL por cero
-                                    </p>
-                                    <p><strong>Dependencia:</strong>
-                                        fn_informa_trae_i_corriente proporciona la tasa de interés corriente del crédito
-                                    </p>
-                                </li>
-
-                                <li>
-                                    <h5>Identificación de la última formalización</h5>
-                                    <p><strong>Propósito:</strong>
-                                        Establecer la referencia temporal y el identificador de movimiento 
-                                        a partir de los comprobantes de formalización
-                                    </p>
-                                    <p><strong>Variables:</strong>
-                                        vFechaUltimaFormalizacion y vIdUltimaFormalizacion
-                                    </p>
+                                        Capturar información de una excepción durante la ejecución</p>
+                                    <p><strong>Operación:</strong>
+                                        El bloque <code>ON EXCEPTION</code> asigna los datos capturados a 
+                                        <code>vCodError</code>, <code>vISAMValue</code> y <code>vTextoResultado</code></p>
+                                    
                                     <p><strong>Condición:</strong>
-                                        Primero se busca la fecha máxima y el ID máximo de movimientos 
-                                        positivos asociados a comprobantes de tipo SOL
-                                    </p>
-                                    <p><strong>Rama alternativa:</strong>
-                                        Si la fecha obtenida es NULL, se consulta la formalización CAS
-                                    </p>
-                                    <p><strong>Observación:</strong>
-                                        En la segunda consulta CAS se asigna MAX(fecha) a vIdUltimaFormalizacion.
-                                        Debe verificarse si debería utilizarse MAX(id_movi)
-                                    </p>
-                                </li>
-
-                                <li>
-                                    <h5>Cálculo del último pago y los abonos</h5>
-                                    <p><strong>Propósito:</strong>
-                                        Identificar el último pago registrado y determinar el importe disponible 
-                                        para aplicarlo a las cuotas
-                                    </p>
-                                    <p><strong>Variables:</strong>
-                                        vFechaUltimoPago, vFechaUltimaFormalizacion, vIdUltimaFormalizacion y vAbono
-                                    </p>
-                                    <p><strong>Operaciones:</strong>
-                                        Se obtiene la fecha máxima de movimientos positivos con comprobantes 
-                                        RC o SOL. Si no existe, se utiliza la fecha de formalización
-                                    </p>
-                                    <p><strong>Reglas:</strong>
-                                        Se excluyen los comprobantes SOL y CAS del cálculo de abonos. Los 
-                                        movimientos cuya descripción coincide con %INT%COR% reciben un factor 
-                                        de cero. El signo del importe depende de deb_cre
-                                    </p>
+                                        Si el texto del error está vacío después de aplicar
+                                        <code>LENGTH(TRIM(vTextoResultado))</code>, se asigna 
+                                        un mensaje alternativo</p>
                                     <p><strong>Resultado:</strong>
-                                        Si la suma calculada es NULL, vAbono se establece en cero
-                                    </p>
+                                        Se intenta retornar una cadena JSON que representa el error</p>
                                 </li>
-
                                 <li>
-                                    <h5>Obtención de la configuración de mora</h5>
+                                    <h5>Inicialización de la respuesta</h5>
                                     <p><strong>Propósito:</strong>
-                                        Identificar si existe una tabla de pagos modificada 
-                                        y obtener los parámetros utilizados para calcular la mora
-                                    </p>
+                                        Preparar la estructura inicial del JSON de éxito</p>
                                     <p><strong>Variables:</strong>
-                                        vse_modifico_tp, v_iva_mora y vcobro_mora
-                                    </p>
+                                        <code>vComma</code> y <code>vResultado</code></p>
                                     <p><strong>Operaciones:</strong>
-                                        Se consulta tpagos para el crédito. Después se 
-                                        obtiene la tasa mediante fn_informa_trae_tasa_mora
-                                    </p>
-                                    <p><strong>Condición:</strong>
-                                        Si la tasa obtenida es NULL, se convierte en cero. Si 
-                                        es cero, se consulta concaja para recuperar tasa_iva
-                                    </p>
+                                        Se establece el separador en una cadena vacía y se inicia la respuesta con las 
+                                        propiedades <code>Resultado</code>, <code>Codigo</code> y <code>Data.data</code></p>
                                     <p><strong>Resultado:</strong>
-                                        inf_parametro proporciona inf_calculo_mora, que 
-                                        interviene en la fórmula de interés moratorio
-                                    </p>
+                                        La cadena queda preparada para recibir los registros</p>
                                 </li>
-
                                 <li>
-                                    <h5>Distribución de abonos y recálculo de cuotas</h5>
+                                    <h5>Consulta de la transacción</h5>
                                     <p><strong>Propósito:</strong>
-                                        Actualizar los saldos de las cuotas y calcular 
-                                        los componentes dinámicos de capital e interés
-                                    </p>
+                                        Recuperar los datos de la transacción solicitada 
+                                        y los datos relacionados del pago</p>
+                                    <p><strong>Tablas:</strong>
+                                        <code>t_cajas_transaccion_pago</code> y <code>t_pagos_pago</code></p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se realiza un <code>LEFT JOIN</code> mediante 
+                                        <code>b.codigo_pago = a.codigo_pago</code>.
+                                        La consulta filtra los registros mediante 
+                                        <code>codigo_transaccion = pcodigo_transaccion</code></p>
+                                    <p><strong>Resultado:</strong>
+                                        Los campos seleccionados se almacenan en 
+                                        las ocho variables correspondientes</p>
+                                </li>
+                                <li>
+                                    <h5>Normalización de algunos valores NULL</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Proporcionar valores alternativos para 
+                                        determinados campos de la consulta</p>
+                                    <p><strong>Operaciones:</strong>
+                                        <code>centro_costo</code> y
+                                        <code>comprobante</code> utilizan una cadena vacía
+                                        cuando el valor es NULL. Los campos
+                                        <code>codigo_pago</code> y <code>numero</code>
+                                        utilizan cero</p>
+                                    <p><strong>Limitación:</strong>
+                                        Esta normalización no se aplica explícitamente
+                                        a todas las columnas consultadas</p>
+                                </li>
+                                <li>
+                                    <h5>Construcción de los objetos JSON</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Convertir cada registro recuperado en un objeto
+                                        representado mediante una cadena JSON</p>
                                     <p><strong>Variables:</strong>
-                                        vAbono, vsaldosdocs, vcuota, vmcuota, vminteres, vmcapital_cuota y vsaldo_doc_restante
-                                    </p>
-                                    <p><strong>Primera condición:</strong>
-                                        Si vAbono es mayor o igual que el saldo de la cuota, se resta 
-                                        dicho saldo del abono y se establece el saldo de la cuota en cero
-                                    </p>
-                                    <p><strong>Segunda condición:</strong>
-                                        Cuando el abono no cubre el saldo, se calcula el 
-                                        interés según la modalidad de la tabla de pagos
-                                    </p>
-                                    <p><strong>Tabla modificada:</strong>
-                                        Se calculan los días de interés modificados a partir de 
-                                        vmint_cuota, vinf_dias_anuales, el saldo inicial y vtasa_int
-                                    </p>
-                                    <p><strong>Tabla no modificada:</strong>
-                                        Para la primera cuota se utiliza la diferencia entre el vencimiento 
-                                        y la fecha de formalización. Para las demás cuotas se utiliza vsol_dias_int
-                                    </p>
-                                    <p><strong>Control de capital:</strong>
-                                        El interés se limita al valor de la cuota. El capital se calcula restando 
-                                        el interés. Si el capital es negativo, se establece en cero. Si supera el 
-                                        saldo restante, se limita al saldo
-                                    </p>
-                                    <p><strong>Efectos:</strong>
-                                        Se actualizan saldo_sdoc, debed_dynamico y haberd_dynamico. Cuando vAbono 
-                                        es mayor que cero en esta rama, el código lo establece posteriormente en cero
-                                    </p>
+                                        <code>vResultado</code> y <code>vComma</code>,
+                                        junto con las variables que contienen los datos
+                                        de la transacción</p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se concatenan las propiedades nit, tipo_doc,
+                                        numero_doc, centro_costo, monto, comprobante,
+                                        numero y codigo_pago</p>
+                                    <p><strong>Separación:</strong>
+                                        El primer objeto se agrega sin una coma inicial.
+                                        Después de cada objeto, <code>vComma</code>
+                                        se establece como una coma para separar los
+                                        registros siguientes</p>
+                                </li>
+                                <li>
+                                    <h5>Cierre y retorno de la respuesta</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Completar la estructura del JSON y devolverla
+                                        al proceso que invocó el procedimiento</p>
+                                    <p><strong>Operación:</strong>
+                                        Después de terminar el <code>FOREACH</code>,
+                                        se agregan los caracteres <code>]}}</code>
+                                        para cerrar el arreglo y los objetos externos</p>
+                                    <p><strong>Resultado:</strong>
+                                        Se ejecuta <code>RETURN vResultado</code>,
+                                        cuyo tipo declarado es <code>CHAR(31000)</code></p>
                                 </li>
                             </ol>
                         </section>
@@ -4291,64 +4192,56 @@ EXECUTE PROCEDURE
                         <!-- Reglas de negocio -->
                         <section class="subsection">
                             <h4>3.6. Reglas de negocio</h4>
-
+                            
                             <ul class="business-rules">
                                 <li>
                                     <strong>RN-001:</strong>
-                                    Las cuotas iniciales se seleccionan de sdocs con ano_mesd igual a cero y cuota mayor que cero
+                                    La consulta se filtra utilizando el código de
+                                    transacción recibido en <code>pcodigo_transaccion</code>.
                                 </li>
 
                                 <li>
                                     <strong>RN-002:</strong>
-                                    Cuando no se encuentra una formalización SOL, se busca una formalización CAS
+                                    Los registros de <code>t_pagos_pago</code> se relacionan
+                                    mediante un <code>LEFT JOIN</code> con
+                                    <code>t_cajas_transaccion_pago</code>.
                                 </li>
-
+                            
                                 <li>
                                     <strong>RN-003:</strong>
-                                    Cuando no se obtiene la fecha del último pago, se 
-                                    utiliza la fecha de formalización como referencia
+                                    Si <code>centro_costo</code> es NULL, se utiliza
+                                    una cadena vacía.
                                 </li>
-
+                            
                                 <li>
                                     <strong>RN-004:</strong>
-                                    El cálculo de abonos excluye movimientos con 
-                                    descripciones que coinciden con el patrón %INT%COR%
+                                    Si <code>codigo_pago</code> o <code>numero</code>
+                                    es NULL, se utiliza cero.
                                 </li>
-
+                            
                                 <li>
                                     <strong>RN-005:</strong>
-                                    Si el abono disponible cubre el saldo de la cuota, el saldo se establece 
-                                    en cero y el importe del saldo se resta del abono disponible
+                                    Cada registro recuperado se representa como un objeto
+                                    dentro del arreglo <code>Data.data</code>.
                                 </li>
-
+                            
                                 <li>
                                     <strong>RN-006:</strong>
-                                    El interés calculado no puede superar el valor de la cuota según la validación implementada
+                                    El separador de los objetos JSON se controla mediante
+                                    la variable <code>vComma</code>.
                                 </li>
-
+                            
                                 <li>
                                     <strong>RN-007:</strong>
-                                    El capital calculado no puede ser negativo. Si supera el 
-                                    saldo restante del documento, se limita a dicho saldo
+                                    El procedimiento declara un manejador de excepciones
+                                    que intenta devolver información sobre el error.
                                 </li>
 
                                 <li>
                                     <strong>RN-008:</strong>
-                                    Se generan cuotas adicionales con saldo cero cuando la última fecha de 
-                                    vencimiento es anterior a pFechaCalculo y la fecha generada sigue siendo 
-                                    estrictamente menor que la fecha de cálculo.
-                                </li>
-
-                                <li>
-                                    <strong>RN-009:</strong>
-                                    El interés moratorio se actualiza únicamente para cuotas 
-                                    con saldo positivo y días de mora mayores que cero.
-                                </li>
-
-                                <li>
-                                    <strong>RN-010:</strong>
-                                    La tasa de mora se obtiene primero mediante fn_informa_trae_tasa_mora. 
-                                    Si resulta cero, se consulta la tasa_iva de concaja.
+                                    El código no implementa explícitamente una respuesta
+                                    de error de negocio cuando la consulta no devuelve
+                                    registros.
                                 </li>
                             </ul>
                         </section>
@@ -4356,7 +4249,7 @@ EXECUTE PROCEDURE
                         <!-- Variables internas -->
                         <section class="subsection">
                             <h4>3.7. Variables internas</h4>
-
+                            
                             <div class="table-wrapper">
                                 <table>
                                     <thead>
@@ -4366,171 +4259,76 @@ EXECUTE PROCEDURE
                                             <th>Propósito</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
-                                         <tr>
-                                            <td><code>vFechaUltimaFormalizacion</code></td>
-                                            <td>DATE</td>
-                                            <td>Almacena la fecha de formalización seleccionada.</td>
+                                        <tr>
+                                            <td><code>vNit</code></td>
+                                            <td>VARCHAR(50)</td>
+                                            <td>Almacena la identificación obtenida de a.nit</td>
                                         </tr>
                                         <tr>
-                                            <td><code>vIdUltimaFormalizacion</code></td>
-                                            <td>DATE</td>
-                                            <td>Almacena el número de id de la fecha de formalización</td>
-                                        </tr>
+                                            <td><code>vTipo_Doc</code></td>
+                                            <td>VARCHAR(4)</td>
+                                            <td>Almacena el tipo de documento</td>
+                                        </tr>                                    
                                         <tr>
-                                            <td><code>ve_comprob</code></td>
-                                            <td>CHAR(3)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>ve_numero</code></td>
-                                            <td>INTEGER</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>ve_tipo_doc</code></td>
-                                            <td>CHAR(3)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>ve_numero_doc</code></td>
-                                            <td>INTEGER</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vcuenta</code></td>
-                                            <td>CHAR(12)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>v_pago</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>v_interes</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>v_mora</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>v_o_cargos</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>v_capital</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>v_iva_interes</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>v_iva_mora</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>v_iva_o_cargos</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vAbono</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vsaldosdocs</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vfechaInicioMora</code></td>
-                                            <td>DATE</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vcuota</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vFechaMaxima</code></td>
-                                            <td>DATE</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vFechaBloqueaCredito</code></td>
-                                            <td>DATE</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vFechaUltimoPago</code></td>
-                                            <td>DATE</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vFechaMinimaVencida</code></td>
-                                            <td>DATE</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vFechaUltimaCuota</code></td>
-                                            <td>DATE</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vFechaDespuesUltima</code></td>
-                                            <td>DATE</td>
-                                            <td>x</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vUltimaCuotaNumero</code></td>
+                                            <td><code>vNumero_Doc</code></td>
                                             <td>INT</td>
-                                            <td>x</td>
-                                        </tr>
+                                            <td>Almacena el número de documento</td>
+                                        </tr>                                    
                                         <tr>
-                                            <td>
-                                                <code>vmcuota</code>
-                                                <code>vmcapital_cuota</code>
-                                                <code>vmcapital_cuota_tp</code>
-                                                <code>vtasa_int</code>
-                                                <code>vminteres</code>
-                                                <code>vsaldo_doc</code>
-                                                <code>vsaldo_doc_restante</code>
-                                                <code>vretencion</code>
-                                                <code>vmint_cuota</code>
-                                                <code>vmsaldo_inicial_prestamo</code>
-                                            </td>
+                                            <td><code>vCentro_Costo</code></td>
+                                            <td>VARCHAR(100)</td>
+                                            <td>Almacena el centro de costo</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td><code>vMonto_Pagar</code></td>
                                             <td>DECIMAL(18,2)</td>
-                                            <td>x</td>
+                                            <td>Almacena el monto a pagar</td>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <code>vsol_dias_int</code>
-                                                <code>vinf_dias_anuales</code>
-                                                <code>vdias_primera_cuota</code>                                            </td>
+                                            <td><code>vCodigo_Pago</code></td>
                                             <td>INT</td>
-                                            <td>x</td>
+                                            <td>Almacena el código de pago asociado</td>
                                         </tr>
                                         <tr>
-                                            <td><code>vse_modifico_tp</code></td>
-                                            <td>BOOLEAN</td>
-                                            <td>x</td>
+                                            <td><code>vComprobante</code></td>
+                                            <td>VARCHAR(10)</td>
+                                            <td>Almacena el comprobante relacionado</td>
                                         </tr>
                                         <tr>
-                                            <td><code>vcobro_mora</code></td>
+                                            <td><code>vNumero</code></td>
                                             <td>INT</td>
-                                            <td>x</td>
+                                            <td>Almacena el número asociado al comprobante</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vComma</code></td>
+                                            <td>VARCHAR(1)</td>
+                                            <td>Controla la separación entre objetos JSON</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCodError</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el código de excepción capturado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vISAMValue</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el valor ISAM capturado por el manejador</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vTextoResultado</code></td>
+                                            <td>VARCHAR(250)</td>
+                                            <td>Almacena el texto asociado al error</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vObjeto</code></td>
+                                            <td>VARCHAR(250)</td>
+                                            <td>Almacena el nombre del procedimiento</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vResultado</code></td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Almacena la cadena JSON que se devuelve</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -4540,7 +4338,7 @@ EXECUTE PROCEDURE
                         <!-- Dependencias -->
                         <section class="subsection">
                             <h4>3.8. Dependencias</h4>
-
+                            
                             <div class="table-wrapper">
                                 <table>
                                     <thead>
@@ -4550,86 +4348,764 @@ EXECUTE PROCEDURE
                                             <th>Uso</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         <tr>
-                                            <td>[NOMBRE_TABLA]</td>
+                                            <td><code>t_cajas_transaccion_pago</code></td>
                                             <td>Tabla</td>
-                                            <td>[LECTURA / ESCRITURA]</td>
+                                            <td>Lectura de los datos principales de la 
+                                                transacción: identificación, documento, 
+                                                centro de costo, monto y código de pago</td>
                                         </tr>
-
                                         <tr>
-                                            <td>[NOMBRE_FUNCION]</td>
-                                            <td>Función / procedimiento</td>
-                                            <td>[PROPÓSITO]</td>
+                                            <td><code>t_pagos_pago</code></td>
+                                            <td>Tabla</td>
+                                            <td>Lectura del comprobante y número asociados
+                                                al código de pago mediante LEFT JOIN</td>
                                         </tr>
-
                                         <tr>
-                                            <td>[SERVICIO_EXTERNO]</td>
-                                            <td>Servicio</td>
-                                            <td>[SI APLICA]</td>
+                                            <td><code>pa_dar_info_transaccion</code></td>
+                                            <td>Procedimiento almacenado</td>
+                                            <td>Objeto documentado. No se identifica otra llamada 
+                                                a un procedimiento externo en el código suministrado</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <p class="helper-text">Las dependencias listadas corresponden a las 
+                                referencias explícitas del código. No se han inferido servicios externos</p>
+                        </section>
+
+                        <!-- Ejemplo -->
+                        <section class="subsection">
+                            <h4>3.9. Ejemplo de ejecución</h4>
+                            
+                                <h5>Entrada de ejemplo</h5>
+                            
+                                    <pre class="code-block"><code>
+EXECUTE PROCEDURE
+    informix.pa_dar_info_transaccion(
+        'TRX0000123'
+    );
+                                    </code></pre>
+
+                                <h5>Salida esperada</h5>
+
+                                    <pre class="code-block"><code>
+{
+    "Resultado": "Exito",
+    "Codigo": "1",
+    "Data": {
+        "data": [
+            {
+                "nit": "101230456",
+                "tipo_doc": "CRED",
+                "numero_doc": "123456789",
+                "centro_costo": "",
+                "monto": "15000.00",
+                "comprobante": "RC",
+                "numero": "12345",
+                "codigo_pago": "1001"
+            }
+        ]
+    }
+}
+                                    </code></pre>
+                        
+                            <p class="helper-text">Los valores del ejemplo son ilustrativos y no corresponden 
+                                a una ejecución real. El resultado depende de los registros existentes en las 
+                                tablas consultadas. La representación numérica y el formato JSON deben verificarse 
+                                en Informix</p>
+                        </section>
+
+                        <!-- Notas y advertencias -->
+                        <section class="subsection">
+                            <h4>3.10. Notas y limitaciones</h4>
+                            
+                            <div class="callout callout-note">
+                                <strong>Nota técnica</strong>
+                                <p>El procedimiento construye manualmente una cadena JSON mediante concatenación. 
+                                    La respuesta de éxito contiene las propiedades Resultado, Codigo y Data, dentro 
+                                    de la cual existe un arreglo data con los registros encontrados</p>
+                            </div>
+
+                            <div class="callout callout-warning">
+                                <strong>Advertencias</strong>
+                                <p>La concatenación de valores NULL puede afectar el resultado. También deben 
+                                    controlarse las comillas, barras invertidas y otros caracteres especiales de
+                                    los campos de texto para evitar JSON inválido. La expresión NVL(vCodigo_Pago, '') 
+                                    utiliza un valor alternativo de tipo texto para una variable numérica y debe 
+                                    corregirse o verificarse. El manejador de excepciones también debe revisarse porque 
+                                    la estructura JSON de error puede quedar mal formada</p>
+                                <p>La cláusula WHERE utiliza codigo_transaccion sin calificarla con el alias a. Es 
+                                    recomendable utilizar a.codigo_transaccion para explicitar la tabla de origen</p>
+                            </div>
+
+                            <div class="callout callout-success">
+                                <strong>Validación</strong>
+                                <p>La documentación se elaboró a partir del código proporcionado. No se ha ejecutado 
+                                    el procedimiento contra una base de datos Informix. Queda pendiente validar la 
+                                    sintaxis en el entorno real, el comportamiento con transacciones inexistentes, los 
+                                    valores NULL, los errores de ejecución y la validez del JSON generado</p>
+                            </div>
+                        </section>
+
+                    </div>
+                </article>
+
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+                <article id="proceso-010" class="process-card">
+                    <header class="process-header">
+                        <div>
+                            <div class="process-kicker">PROCESO PR-010</div>
+                            <h3>Consulta de información de una transacción</h3>
+                            <p>Obtiene los datos asociados a una transacción financiera, incluyendo 
+                                identificación del contribuyente, documento, centro de costo, monto 
+                                a pagar y datos del comprobante. Devuelve la información en formato JSON</p>
+                            </div>
+                            <span class="badge badge-green">10.0</span>
+                    </header>
+                    
+                    <div class="process-body">
+                        
+                        <!-- Identificación -->
+                        <section class="subsection">
+                            <h4>3.1. Identificación del proceso</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span>Tipo</span>
+                                    <strong>PROCEDIMIENTO ALMACENADO</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Plataforma</span>
+                                    <strong>IBM INFORMIX SPL</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Frecuencia</span>
+                                    <strong>NO ESPECIFICADA</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Transaccionalidad</span>
+                                    <strong>NO ESPECIFICADA</strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Parámetros -->
+                        <section class="subsection">
+                            <h4>3.2. Parámetros de entrada</h4>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Tipo de dato</th>
+                                            <th>Descripción</th>
+                                            <th>Obligatorio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>pcodigo_transaccion</code></td>
+                                            <td>VARCHAR(10)</td>
+                                            <td>Código utilizado para localizar los registros de 
+                                                la transacción en la tabla <code>t_cajas_transaccion_pago</code></td>
+                                            <td>No especificado</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="helper-text">El procedimiento no declara una validación inicial
+                                explícita para comprobar si el código es nulo, está vacío o corresponde 
+                                a una transacción existente</p>
+                        </section>
+
+                        <!-- Salidas -->
+                        <section class="subsection">
+                            <h4>3.3. Valores de retorno y salidas</h4>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Salida</th>
+                                            <th>Tipo</th>
+                                            <th>Descripción</th>
+                                            <th>Condición</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Valor de retorno</td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Cadena que contiene el resultado de la consulta estructurado como JSON</td>
+                                            <td>Al finalizar correctamente o al ejecutar el retorno del manejador de excepciones</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vResultado</code></td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Almacena el JSON de respuesta y los objetos correspondientes a los registros consultados</td>
+                                            <td>Se inicializa antes del recorrido y se completa durante el FOREACH</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vNit</code></td>
+                                            <td>VARCHAR(50)</td>
+                                            <td>Identificación obtenida de <code>a.nit</code></td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vTipo_Doc</code></td>
+                                            <td>VARCHAR(4)</td>
+                                            <td>Tipo de documento obtenido de <code>a.tipo_doc</code></td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vNumero_Doc</code></td>
+                                            <td>INT</td>
+                                            <td>Número de documento obtenido de <code>a.numero_doc</code></td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCentro_Costo</code></td>
+                                            <td>VARCHAR(100)</td>
+                                            <td>Centro de costo obtenido de <code>a.centro_costo</code>. 
+                                                Si es NULL, se sustituye por una cadena vacía</td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vMonto_Pagar</code></td>
+                                            <td>DECIMAL(18,2)</td>
+                                            <td>Monto a pagar obtenido de <code>a.monto_pagar</code></td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCodigo_Pago</code></td>
+                                            <td>INT</td>
+                                            <td>Código de pago asociado a la transacción. Se sustituye 
+                                                por cero si el campo consultado es NULL</td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vComprobante</code></td>
+                                            <td>VARCHAR(10)</td>
+                                            <td>Comprobante obtenido de <code>b.comprobante</code>. 
+                                                Si es NULL, se sustituye por una cadena vacía</td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vNumero</code></td>
+                                            <td>INT</td>
+                                            <td>Número obtenido de <code>b.numero</code>. 
+                                                Si es NULL, se sustituye por cero.</td>
+                                            <td>Por cada registro recuperado</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Respuesta de error</td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Intenta devolver un JSON con el resultado de error, el código y el mensaje</td>
+                                            <td>Cuando se produce una excepción capturada por ON EXCEPTION</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p><strong>Resultado esperado:</strong>
+                                una cadena JSON con la estructura de éxito y una lista de 
+                                registros bajo <code>Data.data</code>. En caso de excepción, 
+                                se intenta devolver información del error. La validez del 
+                                JSON de error debe verificarse</p>
+                        </section>
+
+                        <!-- Diagrama -->
+                        <section class="subsection">
+                            <h4>3.4. Diagrama de flujo</h4>
+                            
+                            <p class="helper-text">Flujo de inicialización, consulta 
+                                de la transacción, construcción de los objetos JSON y 
+                                retorno del resultado</p>
+                                
+                                <pre class="flow-diagram"><code>
+┌─────────────────────────────────────────────┐
+│                    INICIO                   │
+│           pa_dar_info_transaccion            │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Recibir pcodigo_transaccion                 │
+│ VARCHAR(10)                                 │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Inicializar vObjeto con el nombre           │
+│ del procedimiento                           │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Configurar ON EXCEPTION                     │
+│ para capturar código, ISAM y mensaje         │
+└──────────────────────┬──────────────────────┘
+                       ▼
+              ┌─────────────────┐
+              │ ¿Hay excepción? │
+              └───────┬─────────┘
+                 SÍ   │   NO
+              ┌───────┘   └─────────────────────┐
+              ▼                                 ▼
+┌──────────────────────────────┐  ┌────────────────────────────┐
+│ Completar mensaje si está    │  │ Inicializar vComma         │
+│ vacío                        │  │ y vResultado               │
+└──────────────┬───────────────┘  └──────────────┬─────────────┘
+               ▼                                 ▼
+┌──────────────────────────────┐  ┌────────────────────────────┐
+│ Construir respuesta de error │  │ Ejecutar SELECT con        │
+│ y retornar el JSON           │  │ LEFT JOIN                  │
+└──────────────────────────────┘  └──────────────┬─────────────┘
+                                                ▼
+                                  ┌────────────────────────────┐
+                                  │ Filtrar por                │
+                                  │ pcodigo_transaccion        │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ ¿Hay registros?            │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ FOREACH: cargar las        │
+                                  │ columnas en variables      │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Construir objeto JSON      │
+                                  │ con los datos del registro │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Establecer vComma = ','    │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ ¿Quedan registros?         │
+                                  └──────────────┬─────────────┘
+                                                 │
+                                    SÍ ──────────┘
+                                                 │ NO
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Cerrar arreglo y objetos   │
+                                  │ JSON con ]}}               │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ RETURN vResultado         │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │             FIN            │
+                                  └────────────────────────────┘
+                                </code></pre>
+                                
+                            <div class="callout callout-warning">
+                                <strong>Importante</strong>
+                                <p>El diagrama representa el flujo previsto del código. La 
+                                    construcción de la respuesta de error debe revisarse 
+                                    porque el texto generado puede no constituir un JSON 
+                                    válido. Además, el bloque ON EXCEPTION debe verificarse
+                                    con la versión y el entorno de Informix utilizados</p>
+                            </div>
+                        </section>
+
+                        <!-- Paso a paso -->
+                        <section class="subsection">
+                            <h4>3.5. Desglose paso a paso</h4>
+                            
+                            <ol class="step-list">
+                                <li>
+                                    <h5>Declaración de variables</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Preparar las variables para almacenar los campos 
+                                        consultados, controlar las excepciones y construir 
+                                        la respuesta JSON</p>   
+                                    <p><strong>Variables:</strong>
+                                        vNit, vTipo_Doc, vNumero_Doc, vCentro_Costo, 
+                                        vMonto_Pagar, vCodigo_Pago, vComprobante, vNumero, 
+                                        vComma, vCodError, vISAMValue, vTextoResultado, 
+                                        vObjeto y vResultado</p>
+                                    <p><strong>Efecto:</strong>
+                                        Se establecen los tipos de datos y las capacidades 
+                                        de almacenamiento para el procedimiento</p>
+                                </li>
+                                <li>
+                                    <h5>Identificación del objeto</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Identificar el procedimiento para utilizar 
+                                        esa referencia en los mensajes de error</p>
+                                    <p><strong>Operación:</strong>
+                                        Se asigna el texto <code>pa_dar_info_transaccion</code> 
+                                        a <code>vObjeto</code></p>
+                                    <p><strong>Resultado:</strong>
+                                        La variable queda disponible para la construcción del 
+                                        mensaje alternativo del manejador de excepciones</p>
+                                </li>
+                                <li>
+                                    <h5>Configuración del manejo de excepciones</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Capturar información de una excepción durante la ejecución</p>
+                                    <p><strong>Operación:</strong>
+                                        El bloque <code>ON EXCEPTION</code> asigna los datos capturados a 
+                                        <code>vCodError</code>, <code>vISAMValue</code> y <code>vTextoResultado</code></p>
+                                    
+                                    <p><strong>Condición:</strong>
+                                        Si el texto del error está vacío después de aplicar
+                                        <code>LENGTH(TRIM(vTextoResultado))</code>, se asigna 
+                                        un mensaje alternativo</p>
+                                    <p><strong>Resultado:</strong>
+                                        Se intenta retornar una cadena JSON que representa el error</p>
+                                </li>
+                                <li>
+                                    <h5>Inicialización de la respuesta</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Preparar la estructura inicial del JSON de éxito</p>
+                                    <p><strong>Variables:</strong>
+                                        <code>vComma</code> y <code>vResultado</code></p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se establece el separador en una cadena vacía y se inicia la respuesta con las 
+                                        propiedades <code>Resultado</code>, <code>Codigo</code> y <code>Data.data</code></p>
+                                    <p><strong>Resultado:</strong>
+                                        La cadena queda preparada para recibir los registros</p>
+                                </li>
+                                <li>
+                                    <h5>Consulta de la transacción</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Recuperar los datos de la transacción solicitada 
+                                        y los datos relacionados del pago</p>
+                                    <p><strong>Tablas:</strong>
+                                        <code>t_cajas_transaccion_pago</code> y <code>t_pagos_pago</code></p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se realiza un <code>LEFT JOIN</code> mediante 
+                                        <code>b.codigo_pago = a.codigo_pago</code>.
+                                        La consulta filtra los registros mediante 
+                                        <code>codigo_transaccion = pcodigo_transaccion</code></p>
+                                    <p><strong>Resultado:</strong>
+                                        Los campos seleccionados se almacenan en 
+                                        las ocho variables correspondientes</p>
+                                </li>
+                                <li>
+                                    <h5>Normalización de algunos valores NULL</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Proporcionar valores alternativos para 
+                                        determinados campos de la consulta</p>
+                                    <p><strong>Operaciones:</strong>
+                                        <code>centro_costo</code> y
+                                        <code>comprobante</code> utilizan una cadena vacía
+                                        cuando el valor es NULL. Los campos
+                                        <code>codigo_pago</code> y <code>numero</code>
+                                        utilizan cero</p>
+                                    <p><strong>Limitación:</strong>
+                                        Esta normalización no se aplica explícitamente
+                                        a todas las columnas consultadas</p>
+                                </li>
+                                <li>
+                                    <h5>Construcción de los objetos JSON</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Convertir cada registro recuperado en un objeto
+                                        representado mediante una cadena JSON</p>
+                                    <p><strong>Variables:</strong>
+                                        <code>vResultado</code> y <code>vComma</code>,
+                                        junto con las variables que contienen los datos
+                                        de la transacción</p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se concatenan las propiedades nit, tipo_doc,
+                                        numero_doc, centro_costo, monto, comprobante,
+                                        numero y codigo_pago</p>
+                                    <p><strong>Separación:</strong>
+                                        El primer objeto se agrega sin una coma inicial.
+                                        Después de cada objeto, <code>vComma</code>
+                                        se establece como una coma para separar los
+                                        registros siguientes</p>
+                                </li>
+                                <li>
+                                    <h5>Cierre y retorno de la respuesta</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Completar la estructura del JSON y devolverla
+                                        al proceso que invocó el procedimiento</p>
+                                    <p><strong>Operación:</strong>
+                                        Después de terminar el <code>FOREACH</code>,
+                                        se agregan los caracteres <code>]}}</code>
+                                        para cerrar el arreglo y los objetos externos</p>
+                                    <p><strong>Resultado:</strong>
+                                        Se ejecuta <code>RETURN vResultado</code>,
+                                        cuyo tipo declarado es <code>CHAR(31000)</code></p>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <!-- Reglas de negocio -->
+                        <section class="subsection">
+                            <h4>3.6. Reglas de negocio</h4>
+                            
+                            <ul class="business-rules">
+                                <li>
+                                    <strong>RN-001:</strong>
+                                    La consulta se filtra utilizando el código de
+                                    transacción recibido en <code>pcodigo_transaccion</code>.
+                                </li>
+
+                                <li>
+                                    <strong>RN-002:</strong>
+                                    Los registros de <code>t_pagos_pago</code> se relacionan
+                                    mediante un <code>LEFT JOIN</code> con
+                                    <code>t_cajas_transaccion_pago</code>.
+                                </li>
+                            
+                                <li>
+                                    <strong>RN-003:</strong>
+                                    Si <code>centro_costo</code> es NULL, se utiliza
+                                    una cadena vacía.
+                                </li>
+                            
+                                <li>
+                                    <strong>RN-004:</strong>
+                                    Si <code>codigo_pago</code> o <code>numero</code>
+                                    es NULL, se utiliza cero.
+                                </li>
+                            
+                                <li>
+                                    <strong>RN-005:</strong>
+                                    Cada registro recuperado se representa como un objeto
+                                    dentro del arreglo <code>Data.data</code>.
+                                </li>
+                            
+                                <li>
+                                    <strong>RN-006:</strong>
+                                    El separador de los objetos JSON se controla mediante
+                                    la variable <code>vComma</code>.
+                                </li>
+                            
+                                <li>
+                                    <strong>RN-007:</strong>
+                                    El procedimiento declara un manejador de excepciones
+                                    que intenta devolver información sobre el error.
+                                </li>
+
+                                <li>
+                                    <strong>RN-008:</strong>
+                                    El código no implementa explícitamente una respuesta
+                                    de error de negocio cuando la consulta no devuelve
+                                    registros.
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Variables internas -->
+                        <section class="subsection">
+                            <h4>3.7. Variables internas</h4>
+                            
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Variable</th>
+                                            <th>Tipo</th>
+                                            <th>Propósito</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>vNit</code></td>
+                                            <td>VARCHAR(50)</td>
+                                            <td>Almacena la identificación obtenida de a.nit</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vTipo_Doc</code></td>
+                                            <td>VARCHAR(4)</td>
+                                            <td>Almacena el tipo de documento</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td><code>vNumero_Doc</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el número de documento</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td><code>vCentro_Costo</code></td>
+                                            <td>VARCHAR(100)</td>
+                                            <td>Almacena el centro de costo</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td><code>vMonto_Pagar</code></td>
+                                            <td>DECIMAL(18,2)</td>
+                                            <td>Almacena el monto a pagar</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCodigo_Pago</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el código de pago asociado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vComprobante</code></td>
+                                            <td>VARCHAR(10)</td>
+                                            <td>Almacena el comprobante relacionado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vNumero</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el número asociado al comprobante</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vComma</code></td>
+                                            <td>VARCHAR(1)</td>
+                                            <td>Controla la separación entre objetos JSON</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCodError</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el código de excepción capturado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vISAMValue</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el valor ISAM capturado por el manejador</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vTextoResultado</code></td>
+                                            <td>VARCHAR(250)</td>
+                                            <td>Almacena el texto asociado al error</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vObjeto</code></td>
+                                            <td>VARCHAR(250)</td>
+                                            <td>Almacena el nombre del procedimiento</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vResultado</code></td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Almacena la cadena JSON que se devuelve</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </section>
 
+                        <!-- Dependencias -->
+                        <section class="subsection">
+                            <h4>3.8. Dependencias</h4>
+                            
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Dependencia</th>
+                                            <th>Tipo</th>
+                                            <th>Uso</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>t_cajas_transaccion_pago</code></td>
+                                            <td>Tabla</td>
+                                            <td>Lectura de los datos principales de la 
+                                                transacción: identificación, documento, 
+                                                centro de costo, monto y código de pago</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>t_pagos_pago</code></td>
+                                            <td>Tabla</td>
+                                            <td>Lectura del comprobante y número asociados
+                                                al código de pago mediante LEFT JOIN</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>pa_dar_info_transaccion</code></td>
+                                            <td>Procedimiento almacenado</td>
+                                            <td>Objeto documentado. No se identifica otra llamada 
+                                                a un procedimiento externo en el código suministrado</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <p class="helper-text">Las dependencias listadas corresponden a las 
+                                referencias explícitas del código. No se han inferido servicios externos</p>
+                        </section>
+
                         <!-- Ejemplo -->
                         <section class="subsection">
                             <h4>3.9. Ejemplo de ejecución</h4>
+                            
+                                <h5>Entrada de ejemplo</h5>
+                            
+                                    <pre class="code-block"><code>
+EXECUTE PROCEDURE
+    informix.pa_dar_info_transaccion(
+        'TRX0000123'
+    );
+                                    </code></pre>
 
-                            <h5>Entrada de ejemplo</h5>
+                                <h5>Salida esperada</h5>
 
-                            <pre class="code-block"><code>
--- TODO: Sustituir por una llamada válida
--- para la tecnología utilizada.
-[LLAMADA_DE_EJEMPLO]
-                            </code></pre>
-
-                            <h5>Salida esperada</h5>
-
-                            <pre class="code-block"><code>
-[RESULTADO_ESPERADO]
-                            </code></pre>
-
-                            <p class="helper-text">
-                                Utilizar valores representativos y no incluir
-                                credenciales, datos personales sensibles
-                                ni información confidencial.
-                            </p>
+                                    <pre class="code-block"><code>
+{
+    "Resultado": "Exito",
+    "Codigo": "1",
+    "Data": {
+        "data": [
+            {
+                "nit": "101230456",
+                "tipo_doc": "CRED",
+                "numero_doc": "123456789",
+                "centro_costo": "",
+                "monto": "15000.00",
+                "comprobante": "RC",
+                "numero": "12345",
+                "codigo_pago": "1001"
+            }
+        ]
+    }
+}
+                                    </code></pre>
+                        
+                            <p class="helper-text">Los valores del ejemplo son ilustrativos y no corresponden 
+                                a una ejecución real. El resultado depende de los registros existentes en las 
+                                tablas consultadas. La representación numérica y el formato JSON deben verificarse 
+                                en Informix</p>
                         </section>
 
                         <!-- Notas y advertencias -->
                         <section class="subsection">
                             <h4>3.10. Notas y limitaciones</h4>
-
+                            
                             <div class="callout callout-note">
                                 <strong>Nota técnica</strong>
-                                <p>
-                                    [OBSERVACIONES, SUPUESTOS O INFORMACIÓN
-                                    ADICIONAL RELEVANTE.]
-                                </p>
+                                <p>El procedimiento construye manualmente una cadena JSON mediante concatenación. 
+                                    La respuesta de éxito contiene las propiedades Resultado, Codigo y Data, dentro 
+                                    de la cual existe un arreglo data con los registros encontrados</p>
                             </div>
 
                             <div class="callout callout-warning">
                                 <strong>Advertencias</strong>
-                                <p>
-                                    [RIESGOS, LIMITACIONES O CONDICIONES
-                                    QUE DEBEN VERIFICARSE.]
-                                </p>
+                                <p>La concatenación de valores NULL puede afectar el resultado. También deben 
+                                    controlarse las comillas, barras invertidas y otros caracteres especiales de
+                                    los campos de texto para evitar JSON inválido. La expresión NVL(vCodigo_Pago, '') 
+                                    utiliza un valor alternativo de tipo texto para una variable numérica y debe 
+                                    corregirse o verificarse. El manejador de excepciones también debe revisarse porque 
+                                    la estructura JSON de error puede quedar mal formada</p>
+                                <p>La cláusula WHERE utiliza codigo_transaccion sin calificarla con el alias a. Es 
+                                    recomendable utilizar a.codigo_transaccion para explicitar la tabla de origen</p>
                             </div>
 
                             <div class="callout callout-success">
                                 <strong>Validación</strong>
-                                <p>
-                                    [PRUEBAS REALIZADAS, RESULTADOS
-                                    VERIFICADOS O VALIDACIONES PENDIENTES.]
-                                </p>
+                                <p>La documentación se elaboró a partir del código proporcionado. No se ha ejecutado 
+                                    el procedimiento contra una base de datos Informix. Queda pendiente validar la 
+                                    sintaxis en el entorno real, el comportamiento con transacciones inexistentes, los 
+                                    valores NULL, los errores de ejecución y la validez del JSON generado</p>
                             </div>
                         </section>
-
                     </div>
                 </article>
+
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
 
                 <!-- TODO: Duplicar article.process-card para PR-002, PR-003, etc. -->
             </section>
@@ -4730,6 +5206,11 @@ EXECUTE PROCEDURE
                             <dt>Desembolso</dt>
                             <dd>[DEFINICIÓN]</dd>
                         </div>
+
+                        <div>
+                            <dt>Código de transacción</dt>
+                            <dd>[DEFINICIÓN]</dd>
+                        </div>
                     </dl>
                 </div>
             </section>
@@ -4776,6 +5257,12 @@ EXECUTE PROCEDURE
                                     <td>19/10/2026</td>
                                     <td>Ronald Eduardo Condega Paizano</td>
                                     <td>Se implementaron más procesos dentro del catálogo</td>
+                                </tr>
+                                <tr>
+                                    <td>9.1</td>
+                                    <td>20/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
+                                    <td>Se añadió el noveno proceso de SPL de Informix al catálogo</td>
                                 </tr>
                             </tbody>
                         </table>
