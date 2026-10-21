@@ -119,7 +119,7 @@
                                 <tr>
                                     <td>PR-001</td>
                                     <td><a href="#proceso-001">Cálculo de pagos, saldos y cobros</a></td>
-                                    <td><span class="badge badge-purple">[TIPO]</span></td>
+                                    <td><span class="badge badge-purple">LISTO</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
                                     <td>[SALIDA]</td>
@@ -183,7 +183,7 @@
                                 <tr>
                                     <td>PR-009</td>
                                     <td><a href="#proceso-009">Consulta de información de una transacción</a></td>
-                                    <td><span class="badge badge-green">[TIPO]</span></td>
+                                    <td><span class="badge badge-purple">LISTO</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
                                     <td>[SALIDA]</td>
@@ -199,15 +199,15 @@
                                 <tr>
                                     <td>PR-011</td>
                                     <td><a href="#proceso-011">Consulta de cuentas consignas</a></td>
-                                    <td><span class="badge badge-green">[TIPO]</span></td>
+                                    <td><span class="badge badge-purple">LISTO</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
                                     <td>[SALIDA]</td>
                                 </tr>
                                 <tr>
                                     <td>PR-012</td>
-                                    <td><a href="#proceso-012">Detalles de transacción</a></td>
-                                    <td><span class="badge badge-green">[TIPO]</span></td>
+                                    <td><a href="#proceso-012">Consulta de comprobantes de caja</a></td>
+                                    <td><span class="badge badge-green">CURSO</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
                                     <td>[SALIDA]</td>
@@ -5144,21 +5144,21 @@ EXECUTE PROCEDURE
                                         </tr>
                                             <td>vComprob</td>
                                             <td>VARCHAR(3)</td>
-                                            <td></td>
+                                            <td>Comprobante se obtiene de <code>b.comprob</code></td>
                                             <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
                                                 ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
                                         </tr>
                                         </tr>
                                             <td>vCuenta</td>
                                             <td>VARCHAR(30)</td>
-                                            <td></td>
+                                            <td>vCuenta se obtiene de <code>b.cuenta_i</code></td>
                                             <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
                                                 ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
                                         </tr>
                                         </tr>
                                             <td>vUltimo</td>
                                             <td>INT</td>
-                                            <td></td>
+                                            <td>vUltimo se obtiene de <code>b.ultimo</code></td>
                                             <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
                                                 ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
                                         </tr>
@@ -5189,12 +5189,12 @@ EXECUTE PROCEDURE
                                 <pre class="flow-diagram"><code>
 ┌─────────────────────────────────────────────┐
 │                    INICIO                   │
-│           pa_dar_info_transaccion            │
+│           pa_dar_comprobantes_caja          │
 └──────────────────────┬──────────────────────┘
                        ▼
 ┌─────────────────────────────────────────────┐
-│ Recibir pcodigo_transaccion                 │
-│ VARCHAR(10)                                 │
+│ Recibir pCodigo_caja                        │
+│ INT                                         │
 └──────────────────────┬──────────────────────┘
                        ▼
 ┌─────────────────────────────────────────────┐
@@ -5214,7 +5214,7 @@ EXECUTE PROCEDURE
               ┌───────┘   └─────────────────────┐
               ▼                                 ▼
 ┌──────────────────────────────┐  ┌────────────────────────────┐
-│ Completar mensaje si está    │  │ Inicializar vComma         │
+│ No completar mensaje si está │  │ Inicializar vComma         │
 │ vacío                        │  │ y vResultado               │
 └──────────────┬───────────────┘  └──────────────┬─────────────┘
                ▼                                 ▼
@@ -5273,7 +5273,8 @@ EXECUTE PROCEDURE
                                     construcción de la respuesta de error debe revisarse 
                                     porque el texto generado puede no constituir un JSON 
                                     válido. Además, el bloque ON EXCEPTION debe verificarse
-                                    con la versión y el entorno de Informix utilizados</p>
+                                    con la versión y el entorno de Informix utilizados. Asimismo, 
+                                    no se pueden dejar valores nulo por ninguna ocasión</p>
                             </div>
                         </section>
 
@@ -5289,10 +5290,7 @@ EXECUTE PROCEDURE
                                         consultados, controlar las excepciones y construir 
                                         la respuesta JSON</p>   
                                     <p><strong>Variables:</strong>
-                                        vNit, vTipo_Doc, vNumero_Doc, vCentro_Costo, 
-                                        vMonto_Pagar, vCodigo_Pago, vComprobante, vNumero, 
-                                        vComma, vCodError, vISAMValue, vTextoResultado, 
-                                        vObjeto y vResultado</p>
+                                        <code>vComprob</code>, <code>vCuenta</code> y <code>vUltimo</code></p>
                                     <p><strong>Efecto:</strong>
                                         Se establecen los tipos de datos y las capacidades 
                                         de almacenamiento para el procedimiento</p>
@@ -5303,7 +5301,7 @@ EXECUTE PROCEDURE
                                         Identificar el procedimiento para utilizar 
                                         esa referencia en los mensajes de error</p>
                                     <p><strong>Operación:</strong>
-                                        Se asigna el texto <code>pa_dar_info_transaccion</code> 
+                                        Se asigna el texto <code>pa_dar_comprobantes_caja</code> 
                                         a <code>vObjeto</code></p>
                                     <p><strong>Resultado:</strong>
                                         La variable queda disponible para la construcción del 
@@ -5342,30 +5340,27 @@ EXECUTE PROCEDURE
                                         Recuperar los datos de la transacción solicitada 
                                         y los datos relacionados del pago</p>
                                     <p><strong>Tablas:</strong>
-                                        <code>t_cajas_transaccion_pago</code> y <code>t_pagos_pago</code></p>
+                                        <code>t_cajas_caja_comprobante</code> y <code>comprobante</code></p>
                                     <p><strong>Operaciones:</strong>
-                                        Se realiza un <code>LEFT JOIN</code> mediante 
-                                        <code>b.codigo_pago = a.codigo_pago</code>.
+                                        Se realiza un <code>INNER JOIN</code> mediante 
+                                        <code>a.comprobante = b.comprob</code>.
                                         La consulta filtra los registros mediante 
-                                        <code>codigo_transaccion = pcodigo_transaccion</code></p>
+                                        <code>a.codigo_caja = pCodigo_caja</code></p>
                                     <p><strong>Resultado:</strong>
                                         Los campos seleccionados se almacenan en 
                                         las ocho variables correspondientes</p>
                                 </li>
                                 <li>
-                                    <h5>Normalización de algunos valores NULL</h5>
+                                    <h5>Normalización de para valores NOT NULL</h5>
                                     <p><strong>Propósito:</strong>
-                                        Proporcionar valores alternativos para 
-                                        determinados campos de la consulta</p>
+                                        No está permitido el ingreso de valores
+                                        vacíos para todos los campos de la consulta</p>
                                     <p><strong>Operaciones:</strong>
-                                        <code>centro_costo</code> y
-                                        <code>comprobante</code> utilizan una cadena vacía
-                                        cuando el valor es NULL. Los campos
-                                        <code>codigo_pago</code> y <code>numero</code>
-                                        utilizan cero</p>
+                                        Ya sea <code>comprobante</code>, <code>cuenta</code>, <code>ultimo</code> 
+                                        o <code>cuenta_r</code> no permiten el ingreso de valores nulos</p>
                                     <p><strong>Limitación:</strong>
-                                        Esta normalización no se aplica explícitamente
-                                        a todas las columnas consultadas</p>
+                                        Esta normalización se aplica explícitamente para todas las columnas; sin 
+                                        embargo, en que caso de que se desee ingresar valores nulos, no se podrá</p>
                                 </li>
                                 <li>
                                     <h5>Construcción de los objetos JSON</h5>
@@ -5377,9 +5372,8 @@ EXECUTE PROCEDURE
                                         junto con las variables que contienen los datos
                                         de la transacción</p>
                                     <p><strong>Operaciones:</strong>
-                                        Se concatenan las propiedades nit, tipo_doc,
-                                        numero_doc, centro_costo, monto, comprobante,
-                                        numero y codigo_pago</p>
+                                        Se concatenan las propiedades <code>comprobante</code>, 
+                                        <code>cuenta</code> y <code>ultimo</code></p>
                                     <p><strong>Separación:</strong>
                                         El primer objeto se agrega sin una coma inicial.
                                         Después de cada objeto, <code>vComma</code>
@@ -5825,10 +5819,46 @@ EXECUTE PROCEDURE
                                     <td>Se implementaron más procesos dentro del catálogo</td>
                                 </tr>
                                 <tr>
+                                    <td>3.0</td>
+                                    <td>19/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
+                                    <td>Se implementó el tercer proceso al catálgo</td>
+                                </tr>
+                                <tr>
                                     <td>9.1</td>
                                     <td>20/10/2026</td>
                                     <td>Ronald Eduardo Condega Paizano</td>
                                     <td>Se añadió el noveno proceso de SPL de Informix al catálogo</td>
+                                </tr>
+                                <tr>
+                                    <td>10.1</td>
+                                    <td>19/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>11.1</td>
+                                    <td>19/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>11.4</td>
+                                    <td>20/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>12.1</td>
+                                    <td>20/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>18.0</td>
+                                    <td>21/10/2026</td>
+                                    <td>Ronald Eduardo Condega Paizano</td>
+                                    <td>Se añadió el duodécimo proceso de SPL de Informix al catálogo</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -5838,7 +5868,7 @@ EXECUTE PROCEDURE
 
             <footer class="document-footer">
                 <p><strong>DocuFlow</strong> · Documentación técnica</p>
-                <p>Versión 1.0 · Generado el 16/10/2026</p>
+                <p>Versión 18.0 · Generado el 16/10/2026</p>
                 <p class="footer-note">Documento sujeto a validación por el equipo técnico.</p>
             </footer>
         </main>
