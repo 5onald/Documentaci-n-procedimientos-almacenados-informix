@@ -182,7 +182,7 @@
                                 </tr>
                                 <tr>
                                     <td>PR-009</td>
-                                    <td><a href="#proceso-009">Detalles de transacción</a></td>
+                                    <td><a href="#proceso-009">Consulta de información de una transacción</a></td>
                                     <td><span class="badge badge-green">[TIPO]</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
@@ -190,7 +190,7 @@
                                 </tr>
                                 <tr>
                                     <td>PR-010</td>
-                                    <td><a href="#proceso-010">cálculo de pagos, saldos y cobros</a></td>
+                                    <td><a href="#proceso-010">Consulta de información de un pago</a></td>
                                     <td><span class="badge badge-green">[TIPO]</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
@@ -198,7 +198,7 @@
                                 </tr>
                                 <tr>
                                     <td>PR-011</td>
-                                    <td><a href="#proceso-011">Detalles de transacción</a></td>
+                                    <td><a href="#proceso-011">Consulta de cuentas consignas</a></td>
                                     <td><span class="badge badge-green">[TIPO]</span></td>
                                     <td>[DESCRIPCIÓN_FUNCIONAL]</td>
                                     <td>[ENTRADA]</td>
@@ -1905,7 +1905,7 @@ EXECUTE PROCEDURE
                                             <td>
                                                 <code>vsol_dias_int</code>
                                                 <code>vinf_dias_anuales</code>
-                                                <code>vdias_primera_cuota</code>                                            </td>
+                                                <code>vdias_primera_cuota</code></td>
                                             <td>INT</td>
                                             <td>x</td>
                                         </tr>
@@ -2027,7 +2027,7 @@ EXECUTE PROCEDURE
                     <header class="process-header">
                         <div>
                             <div class="process-kicker">PROCESO PR-003</div>
-                            <h3>Realizar consignas</h3>
+                            <h3>X</h3>
                             <p>Construye una tabla temporal de cuotas de un crédito, distribuye abonos, calcula los componentes 
                             dinámicos de capital e intereses y determina los días de mora y el interés moratorio de las cuotas 
                             con saldo pendiente.</p>
@@ -3991,7 +3991,7 @@ EXECUTE PROCEDURE
                        ▼
 ┌─────────────────────────────────────────────┐
 │ Configurar ON EXCEPTION                     │
-│ para capturar código, ISAM y mensaje         │
+│ para capturar código, ISAM y mensaje        │
 └──────────────────────┬──────────────────────┘
                        ▼
               ┌─────────────────┐
@@ -4046,7 +4046,7 @@ EXECUTE PROCEDURE
                                   └──────────────┬─────────────┘
                                                  ▼
                                   ┌────────────────────────────┐
-                                  │ RETURN vResultado         │
+                                  │ RETURN vResultado          │
                                   └──────────────┬─────────────┘
                                                  ▼
                                   ┌────────────────────────────┐
@@ -4455,18 +4455,16 @@ EXECUTE PROCEDURE
 
 
 <!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+ 
 
-
-                <article id="proceso-010" class="process-card">
+                <article id="proceso-011" class="process-card">
                     <header class="process-header">
                         <div>
-                            <div class="process-kicker">PROCESO PR-010</div>
-                            <h3>Consulta de información de una transacción</h3>
-                            <p>Obtiene los datos asociados a una transacción financiera, incluyendo 
-                                identificación del contribuyente, documento, centro de costo, monto 
-                                a pagar y datos del comprobante. Devuelve la información en formato JSON</p>
+                            <div class="process-kicker">PROCESO PR-011</div>
+                            <h3>Consulta de cuentas consignas</h3>
+                            <p></p>
                             </div>
-                            <span class="badge badge-green">10.0</span>
+                            <span class="badge badge-green">11.0</span>
                     </header>
                     
                     <div class="process-body">
@@ -4509,10 +4507,9 @@ EXECUTE PROCEDURE
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><code>pcodigo_transaccion</code></td>
-                                            <td>VARCHAR(10)</td>
-                                            <td>Código utilizado para localizar los registros de 
-                                                la transacción en la tabla <code>t_cajas_transaccion_pago</code></td>
+                                            <td>pcodigo_asignacion</td>
+                                            <td>INT</td>
+                                            <td>Almacena el número que se le asigna a una cuenta consigna en un entero</td>
                                             <td>No especificado</td>
                                         </tr>
                                     </tbody>
@@ -4520,7 +4517,603 @@ EXECUTE PROCEDURE
                             </div>
                             <p class="helper-text">El procedimiento no declara una validación inicial
                                 explícita para comprobar si el código es nulo, está vacío o corresponde 
-                                a una transacción existente</p>
+                                a una cuenta consigna existente</p>
+                        </section>
+
+                        <!-- Salidas -->
+                        <section class="subsection">
+                            <h4>3.3. Valores de retorno y salidas</h4>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Salida</th>
+                                            <th>Tipo</th>
+                                            <th>Descripción</th>
+                                            <th>Condición</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Valor de retorno</td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Contiene el resultado de la consultado estructurado como JSON</td>
+                                            <td>Al finalizar correctamente o al ejecutar el retorno del manejador de excepciones</td>
+                                        </tr>
+                                        <tr>
+                                            <td>vResultado</td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Almacena el JSON de respusta y los objetos a los registros consultados</td>
+                                            <td>Al finalizar correctamente o al ejecutar el retorno del manejador de excepciones</td>
+                                        </tr>
+                                        <tr>
+                                            <td>vComprob</td>
+                                            <td>VARCHAR(3)</td>
+                                            <td>Comprobante obtenido de <code>c.comprob</code></td>
+                                            <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
+                                                ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
+                                        </tr>
+                                        <tr>
+                                            <td>vCuenta</td>
+                                            <td>VARCHAR(30)</td>
+                                            <td>Cuenta obtenida de <code>c.cuenta_i</code></td>
+                                            <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
+                                                ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
+                                        </tr>
+                                        <tr>
+                                            <td>vUltimo</td>
+                                            <td>INT</td>
+                                            <td>Último obtenido de <code>c.ultimo</code></td>
+                                            <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
+                                                ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
+                                        </tr>
+                                        <tr>
+                                            <td>vCuenta_r</td>
+                                            <td>VARCHAR(30)</td>
+                                            <td>Cuenta_r obtenida de<code>c.cuenta_r</code></td>
+                                            <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
+                                                ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Respuesta de error</td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Intenta devolver un JSON con el resultado de error, el código y mensaje</td>
+                                            <td>Cuando se produce una excepción capturada por un <code>ON EXCEPTION</code></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p><strong>Resultado esperado:</strong>
+                                una cadena JSON con la estructura de éxito y una lista de 
+                                registros bajo <code>Data.data</code>. En caso de excepción, 
+                                se intenta devolver información del error. La validez del 
+                                JSON de error debe verificarse</p>
+                        </section>
+
+                        <!-- Diagrama -->
+                        <section class="subsection">
+                            <h4>3.4. Diagrama de flujo</h4>
+                            
+                            <p class="helper-text">Flujo de inicialización, consulta 
+                                de la transacción, construcción de los objetos JSON y 
+                                retorno del resultado</p>
+                                
+                                <pre class="flow-diagram"><code>
+┌─────────────────────────────────────────────┐
+│                    INICIO                   │
+│           pa_dar_cuentas_consigna           │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Recibir pcodigo_asignacion                  │
+│ INT                                         │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Inicializar vObjeto con el nombre           │
+│ del procedimiento                           │
+└──────────────────────┬──────────────────────┘
+                       ▼
+┌─────────────────────────────────────────────┐
+│ Configurar ON EXCEPTION                     │
+│ para capturar código, ISAM y mensaje        │
+└──────────────────────┬──────────────────────┘
+                       ▼
+              ┌─────────────────┐
+              │ ¿Hay excepción? │
+              └───────┬─────────┘
+                 SÍ   │   NO
+              ┌───────┘   └─────────────────────┐
+              ▼                                 ▼
+┌──────────────────────────────┐  ┌────────────────────────────┐
+│ No completar mensaje si está │  │ Inicializar vComma         │
+│ vacío                        │  │ y vResultado               │
+└──────────────┬───────────────┘  └──────────────┬─────────────┘
+               ▼                                 ▼
+┌──────────────────────────────┐  ┌────────────────────────────┐
+│ Construir respuesta de error │  │ Ejecutar SELECT con        │
+│ y retornar el JSON           │  │ INNER JOIN                  │
+└──────────────────────────────┘  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Filtrar por                │
+                                  │ pcodigo_asignacion         │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ ¿Hay registros?            │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ FOREACH: cargar las        │
+                                  │ columnas en variables      │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Construir objeto JSON      │
+                                  │ con los datos del registro │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Establecer vComma = ','    │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ ¿Quedan registros?         │
+                                  └──────────────┬─────────────┘
+                                                 │
+                                    SÍ ──────────┘
+                                                 │ NO
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ Cerrar arreglo y objetos   │
+                                  │ JSON con ]}}               │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │ RETURN vResultado          │
+                                  └──────────────┬─────────────┘
+                                                 ▼
+                                  ┌────────────────────────────┐
+                                  │             FIN            │
+                                  └────────────────────────────┘
+                                </code></pre>
+                                
+                            <div class="callout callout-warning">
+                                <strong>Importante</strong>
+                                <p>El diagrama representa el flujo previsto del código. La 
+                                    construcción de la respuesta de error debe revisarse 
+                                    porque el texto generado puede no constituir un JSON 
+                                    válido. Además, el bloque ON EXCEPTION debe verificarse
+                                    con la versión y el entorno de Informix utilizados. Asimismo, 
+                                    no se pueden dejar valores nulo por ninguna ocasión</p>
+                            </div>
+                        </section>
+
+                        <!-- Paso a paso -->
+                        <section class="subsection">
+                            <h4>3.5. Desglose paso a paso</h4>
+                            
+                            <ol class="step-list">
+                                <li>
+                                    <h5>Declaración de variables</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Preparar las variables para almacenar los campos 
+                                        consultados, controlar las excepciones y construir 
+                                        la respuesta JSON</p>
+                                    <p><strong>Variables:</strong>
+                                        <code>vComprob</code>, <code>vCuenta</code>, <code>vUltimo</code>, <code>vCuenta_r</code>, <code>vComma</code>, 
+                                        <code>vCodError</code>, <code>vISAMValue</code>, <code>vTextoResultado</code>, <code>vObjeto</code>, <code>vResultado</code></p>
+                                    <p><strong>Efecto:</strong>
+                                        Se establecen los tipos de datos y las capacidades 
+                                        de almacenamiento para el procedimiento</p>
+                                </li>
+                                <li>
+                                    <h5>Identificación del objeto</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Identificar el procedimiento para utilizar 
+                                        esa referencia en los mensajes de error</p>
+                                    <p><strong>Operación:</strong>
+                                        Se asigna el texto <code>pa_dar_cuentas_consigna</code> 
+                                        a <code>vObjeto</code></p>
+                                    <p><strong>Resultado:</strong>
+                                        La variable queda disponible para la construcción del 
+                                        mensaje alternativo del manejador de excepciones</p>
+                                </li>
+                                <li>
+                                    <h5>Configuración del manejo de excepciones</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Capturar información de una excepción durante la ejecución</p>
+                                    <p><strong>Operación:</strong>
+                                        El bloque <code>ON EXCEPTION</code> asigna los datos capturados a 
+                                        <code>vCodError</code>, <code>vISAMValue</code> y <code>vTextoResultado</code></p>
+                                    
+                                    <p><strong>Condición:</strong>
+                                        Si el texto del error está vacío después de aplicar
+                                        <code>LENGTH(TRIM(vTextoResultado))</code>, se asigna 
+                                        un mensaje alternativo</p>
+                                    <p><strong>Resultado:</strong>
+                                        Se intenta retornar una cadena JSON que representa el error</p>
+                                </li>
+                                <li>
+                                    <h5>Inicialización de la respuesta</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Preparar la estructura inicial del JSON de éxito</p>
+                                    <p><strong>Variables:</strong>
+                                        <code>vComma</code> y <code>vResultado</code></p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se establece el separador en una cadena vacía y se inicia la respuesta con las 
+                                        propiedades <code>Resultado</code>, <code>Codigo</code> y <code>Data.data</code></p>
+                                    <p><strong>Resultado:</strong>
+                                        La cadena queda preparada para recibir los registros</p>
+                                </li>
+                                <li>
+                                    <h5>Consulta de la consigna</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Recuperar los datos de la consigna solicitada 
+                                        y los datos relacionados del comprobante</p>
+                                    <p><strong>Tablas:</strong>
+                                        <code>t_cajas_transaccion_pago</code> con <code>t_cajas_caja_comprobante</code>
+                                        y <code>comprobante</code></p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se realiza un <code>INNER JOIN</code> mediante <code>a.referencia = b.codigo_caja</code>, 
+                                        así como también con <code>c.comprob = b.comprobante</code>. La consulta filtra los 
+                                        registros mediante <code>a.codigo_asignacion = pcodigo_asignacion</code>, pero también 
+                                        utiliza <code>tipo_c = 'CON'</code> y <code>b.estado = 't'</code></p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se realiza un <code>INNER JOIN</code> mediante 
+                                        <code>b.codigo_pago = a.codigo_pago</code>.
+                                        La consulta filtra los registros mediante 
+                                        <code>codigo_transaccion = pcodigo_transaccion</code></p>
+                                    <p><strong>Resultado:</strong>
+                                        Los campos seleccionados se almacenan en 
+                                        las cuatros variables correspondientes</p>
+                                </li>
+                                <li>
+                                    <h5>Normalización de para valores NOT NULL</h5>
+                                    <p><strong>Propósito:</strong>
+                                        No está permitido el ingreso de valores
+                                        vacíos para todos los campos de la consulta</p>
+                                    <p><strong>Operaciones:</strong>
+                                        Ya sea <code>comprob</code>, <code>cuenta_i</code>, <code>ultimo</code> 
+                                        o <code>cuenta_r</code> no permiten el ingreso de valores nulos</p>
+                                    <p><strong>Limitación:</strong>
+                                        Esta normalización se aplica explícitamente para todas las columnas; sin 
+                                        embargo, en que caso de que se desee ingresar valores nulos, no se podrá</p>
+                                </li>
+                                <li>
+                                    <h5>Construcción de los objetos JSON</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Convertir cada registro recuperado en un objeto
+                                        representado mediante una cadena JSON</p>
+                                    <p><strong>Variables:</strong>
+                                        <code>vResultado</code> y <code>vComma</code>,
+                                        junto con las variables que contienen los datos
+                                        de la transacción</p>
+                                    <p><strong>Operaciones:</strong>
+                                        Se concatenan las propiedades <code>comprobante</code> 
+                                        y <code>cuenta</code></p>
+                                    <p><strong>Separación:</strong>
+                                        El primer objeto se agrega sin una coma inicial.
+                                        Después de cada objeto, <code>vComma</code>
+                                        se establece como una coma para separar los
+                                        registros</p>
+                                </li>
+                                <li>
+                                    <h5>Cierre y retorno de la respuesta</h5>
+                                    <p><strong>Propósito:</strong>
+                                        Completar la estructura del JSON y devolverla
+                                        al proceso que invocó el procedimiento</p>
+                                    <p><strong>Operación:</strong>
+                                        Después de terminar el <code>FOREACH</code>,
+                                        se agregan los caracteres <code>]}}</code>
+                                        para cerrar el arreglo y los objetos externos</p>
+                                    <p><strong>Resultado:</strong>
+                                        Se ejecuta <code>RETURN vResultado</code>,
+                                        cuyo tipo declarado es <code>CHAR(31000)</code></p>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <!-- Reglas de negocio -->
+                        <section class="subsection">
+                            <h4>3.6. Reglas de negocio</h4>
+                            
+                            <ul class="business-rules">
+                                <li>
+                                    <strong>RN-001:</strong>
+                                    La consulta se filtra utilizando el código de
+                                    transacción recibido en <code>pcodigo_asignacion</code>
+                                </li>
+
+                                <li>
+                                    <strong>RN-002:</strong>
+                                    Los registros de <code>t_cajas_caja_comprobante</code> 
+                                    se relacionan mediante un <code>INNER JOIN</code> con
+                                    <code>t_cajas_asignaciones</code>
+                                </li>
+                            
+                                <li>
+                                    <strong>RN-003:</strong>
+                                    Si <code>comprob</code>, <code>cuenta_i</code>, <code>ultimo</code> 
+                                    y <code>cuenta_r</code> son not null, entonces no se deberían de dejar
+                                    vacíos
+                                </li>
+                                <li>
+                                    <strong>RN-004:</strong>
+                                    Cada registro recuperado se representa como un objeto
+                                    dentro del arreglo <code>Data.data</code>.
+                                </li>
+                            
+                                <li>
+                                    <strong>RN-005:</strong>
+                                    El separador de los objetos JSON se controla mediante
+                                    la variable <code>vComma</code>.
+                                </li>
+                            
+                                <li>
+                                    <strong>RN-006:</strong>
+                                    El procedimiento declara un manejador de excepciones
+                                    que intenta devolver información sobre el error.
+                                </li>
+
+                                <li>
+                                    <strong>RN-007:</strong>
+                                    El código no implementa explícitamente una respuesta
+                                    de error de negocio cuando la consulta no devuelve
+                                    registros.
+                                </li>
+                            </ul>
+                        </section>
+
+                        <!-- Variables internas -->
+                        <section class="subsection">
+                            <h4>3.7. Variables internas</h4>
+                            
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Variable</th>
+                                            <th>Tipo</th>
+                                            <th>Propósito</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>vComprob</code></td>
+                                            <td>VARCHAR(3)</td>
+                                            <td>Almacena la identificación obtenida de <code>c.comprob</code></td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCuenta</code></td>
+                                            <td>VARCHAR(30)</td>
+                                            <td>Almacena el tipo de cuenta</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td><code>vUltimo</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el número de la cuenta </td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td><code>vCuenta_r</code></td>
+                                            <td>VARCHAR(30)</td>
+                                            <td>Almacena la cuenta remitente</td>
+                                        </tr>                                    
+                                        <tr>
+                                            <td><code>vComma</code></td>
+                                            <td>VARCHAR(1)</td>
+                                            <td>Controla la separación entre objetos JSON</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vCodError</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el código de excepción capturado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vISAMValue</code></td>
+                                            <td>INT</td>
+                                            <td>Almacena el valor ISAM capturado por el manejador</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vTextoResultado</code></td>
+                                            <td>VARCHAR(250)</td>
+                                            <td>Almacena el texto asociado al error</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vObjeto</code></td>
+                                            <td>VARCHAR(250)</td>
+                                            <td>Almacena el nombre del procedimiento</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>vResultado</code></td>
+                                            <td>CHAR(31000)</td>
+                                            <td>Almacena la cadena JSON que se devuelve</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+
+                        <!-- Dependencias -->
+                        <section class="subsection">
+                            <h4>3.8. Dependencias</h4>
+                            
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Dependencia</th>
+                                            <th>Tipo</th>
+                                            <th>Uso</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>t_cajas_asignaciones</code></td>
+                                            <td>Tabla</td>
+                                            <td>Lectura de los datos principales de la
+                                                consigna: comprobante, tipo de cuenta, última
+                                                y cuenta remitente</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>t_cajas_caja_comprobante</code></td>
+                                            <td>Tabla</td>
+                                            <td>Lectura del comprobante y número asociados
+                                                al código de pago mediante INNER JOIN</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>comprobante</code></td>
+                                            <td>Tabla</td>
+                                            <td>Lectura del comprobante y número asociados
+                                                al código de pago mediante INNER JOIN</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>pa_dar_cuentas_consigna</code></td>
+                                            <td>Procedimiento almacenado</td>
+                                            <td>Objeto documentado. No se identifica otra llamada 
+                                                a un procedimiento externo en el código suministrado</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <p class="helper-text">Las dependencias listadas corresponden a las 
+                                referencias explícitas del código. No se han inferido servicios externos</p>
+                        </section>
+
+                        <!-- Ejemplo -->
+                        <section class="subsection">
+                            <h4>3.9. Ejemplo de ejecución</h4>
+                            
+                                <h5>Entrada de ejemplo</h5>
+                            
+                                    <pre class="code-block"><code>
+EXECUTE PROCEDURE
+    informix.pa_dar_cuentas_consigna(
+        'TRX0000123'
+    );
+                                    </code></pre>
+
+                                <h5>Salida esperada</h5>
+
+                                    <pre class="code-block"><code>
+{
+    "Resultado": "Exito",
+    "Codigo": "1",
+    "Data": {
+        "data": [
+            {
+                "comprobante": "013";
+                "cuenta": "123456789";
+                "cuenta_r": "1001";
+                "ultimo": "12345";
+            }
+        ]
+    }
+}
+                                    </code></pre>
+                        
+                            <p class="helper-text">Los valores del ejemplo son ilustrativos y no corresponden 
+                                a una ejecución real. El resultado depende de los registros existentes en las 
+                                tablas consultadas. La representación numérica y el formato JSON deben verificarse 
+                                en Informix</p>
+                        </section>
+
+                        <!-- Notas y advertencias -->
+                        <section class="subsection">
+                            <h4>3.10. Notas y limitaciones</h4>
+                            
+                            <div class="callout callout-note">
+                                <strong>Nota técnica</strong>
+                                <p>El procedimiento construye manualmente una cadena JSON mediante concatenación. 
+                                    La respuesta de éxito contiene las propiedades Resultado, Codigo y Data, dentro 
+                                    de la cual existe un arreglo data con los registros encontrados</p>
+                            </div>
+
+                            <div class="callout callout-warning">
+                                <strong>Advertencias</strong>
+                                <p>La cláusula SELECT utiliza <code>cuenta_r</code> sin calificarla con el alias <code>c. </code>. 
+                                    Por lo que, es recomendable utilizar <code>c.cuenta_r</code> para poder explicar la tabla original</p>
+                            </div>
+
+                            <div class="callout callout-success">
+                                <strong>Validación</strong>
+                                <p>La documentación se elaboró a partir del código proporcionado. No se ha ejecutado 
+                                    el procedimiento contra una base de datos Informix. Queda pendiente validar la 
+                                    sintaxis en el entorno real, el comportamiento con transacciones inexistentes, los 
+                                    valores NULL, los errores de ejecución y la validez del JSON generado</p>
+                            </div>
+                        </section>
+                    </div>
+                </article>
+
+
+<!-- --------------------------------------------------------------------------------------------------------------------------------------- -->
+
+
+                <article id="proceso-012" class="process-card">
+                    <header class="process-header">
+                        <div>
+                            <div class="process-kicker">PROCESO PR-012</div>
+                            <h3>Consulta de comprobantes de caja</h3>
+                            <p></p>
+                            </div>
+                            <span class="badge badge-green">12.0</span>
+                    </header>
+                    
+                    <div class="process-body">
+                        
+                        <!-- Identificación -->
+                        <section class="subsection">
+                            <h4>3.1. Identificación del proceso</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span>Tipo</span>
+                                    <strong>PROCEDIMIENTO ALMACENADO</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Plataforma</span>
+                                    <strong>IBM INFORMIX SPL</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Frecuencia</span>
+                                    <strong>NO ESPECIFICADA</strong>
+                                </div>
+                                <div class="info-item">
+                                    <span>Transaccionalidad</span>
+                                    <strong>NO ESPECIFICADA</strong>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Parámetros -->
+                        <section class="subsection">
+                            <h4>3.2. Parámetros de entrada</h4>
+                            <div class="table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Tipo de dato</th>
+                                            <th>Descripción</th>
+                                            <th>Obligatorio</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>pCodigo_caja</td>
+                                            <td>INT</td>
+                                            <td>Código utilizado para poder localizar los registros de comprobantes 
+                                                de caja en la tabla <code>t_cajas_caja_comprobante</code></td>
+                                            <td>No especificado</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="helper-text">El procedimiento no declara una validación inicial
+                                explícita para comprobar si el código es nulo, está vacío o corresponde 
+                                a un pago existente</p>
                         </section>
 
                         <!-- Salidas -->
@@ -4549,63 +5142,31 @@ EXECUTE PROCEDURE
                                             <td>Almacena el JSON de respuesta y los objetos correspondientes a los registros consultados</td>
                                             <td>Se inicializa antes del recorrido y se completa durante el FOREACH</td>
                                         </tr>
-                                        <tr>
-                                            <td><code>vNit</code></td>
-                                            <td>VARCHAR(50)</td>
-                                            <td>Identificación obtenida de <code>a.nit</code></td>
-                                            <td>Por cada registro recuperado</td>
+                                            <td>vComprob</td>
+                                            <td>VARCHAR(3)</td>
+                                            <td></td>
+                                            <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
+                                                ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
                                         </tr>
-                                        <tr>
-                                            <td><code>vTipo_Doc</code></td>
-                                            <td>VARCHAR(4)</td>
-                                            <td>Tipo de documento obtenido de <code>a.tipo_doc</code></td>
-                                            <td>Por cada registro recuperado</td>
                                         </tr>
-                                        <tr>
-                                            <td><code>vNumero_Doc</code></td>
+                                            <td>vCuenta</td>
+                                            <td>VARCHAR(30)</td>
+                                            <td></td>
+                                            <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
+                                                ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
+                                        </tr>
+                                        </tr>
+                                            <td>vUltimo</td>
                                             <td>INT</td>
-                                            <td>Número de documento obtenido de <code>a.numero_doc</code></td>
-                                            <td>Por cada registro recuperado</td>
+                                            <td></td>
+                                            <td>Por cada registro recuperado. Sin embargo, al no haber un ' 0 ' o ' "" ', entonces
+                                                ese campo no se sustituye por un cero, ni se puede dejar por una cadena vacía</td>
                                         </tr>
-                                        <tr>
-                                            <td><code>vCentro_Costo</code></td>
-                                            <td>VARCHAR(100)</td>
-                                            <td>Centro de costo obtenido de <code>a.centro_costo</code>. 
-                                                Si es NULL, se sustituye por una cadena vacía</td>
-                                            <td>Por cada registro recuperado</td>
                                         </tr>
-                                        <tr>
-                                            <td><code>vMonto_Pagar</code></td>
-                                            <td>DECIMAL(18,2)</td>
-                                            <td>Monto a pagar obtenido de <code>a.monto_pagar</code></td>
-                                            <td>Por cada registro recuperado</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vCodigo_Pago</code></td>
-                                            <td>INT</td>
-                                            <td>Código de pago asociado a la transacción. Se sustituye 
-                                                por cero si el campo consultado es NULL</td>
-                                            <td>Por cada registro recuperado</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vComprobante</code></td>
-                                            <td>VARCHAR(10)</td>
-                                            <td>Comprobante obtenido de <code>b.comprobante</code>. 
-                                                Si es NULL, se sustituye por una cadena vacía</td>
-                                            <td>Por cada registro recuperado</td>
-                                        </tr>
-                                        <tr>
-                                            <td><code>vNumero</code></td>
-                                            <td>INT</td>
-                                            <td>Número obtenido de <code>b.numero</code>. 
-                                                Si es NULL, se sustituye por cero.</td>
-                                            <td>Por cada registro recuperado</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Respuesta de error</td>
+                                            <td>Error de respuesta</td>
                                             <td>CHAR(31000)</td>
-                                            <td>Intenta devolver un JSON con el resultado de error, el código y el mensaje</td>
-                                            <td>Cuando se produce una excepción capturada por ON EXCEPTION</td>
+                                            <td>Intenta devolver el JSON con el resultado de error, código y mensaje</td>
+                                            <td>Cuando se produce una excepción capturada por un <code>ON EXCEPTION</code></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -5209,6 +5770,11 @@ EXECUTE PROCEDURE
 
                         <div>
                             <dt>Código de transacción</dt>
+                            <dd>[DEFINICIÓN]</dd>
+                        </div>
+
+                        <div>
+                            <dt>Cuenta consigna</dt>
                             <dd>[DEFINICIÓN]</dd>
                         </div>
                     </dl>
